@@ -39,6 +39,9 @@ Homepage
         background: url("/background-big.png") fixed center no-repeat; }
         .home .img-container img {
           width: 22em; } }
+    @media (min-width: 2000px) {
+      .home .img-container {
+        background: url("/background-giant.png") fixed center no-repeat; } }
     @media all and (orientation: portrait) {
       .home .img-container {
         background-size: auto 100%; } }

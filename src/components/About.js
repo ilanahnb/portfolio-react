@@ -8,7 +8,7 @@ const buttons = [
 	{
 		icon: '/icon-climb.png',
 		text: 'Rock Climbing',
-		imagesrc: '/hobby-climb2.png',
+		imagesrc: '/hobby-climb2.jpg',
 		imagetext: 'Climbing at Klättercentret Akalla, Stockholm.',
 		name: 'climb'
 	},
@@ -85,7 +85,7 @@ export class About extends Component {
 		this.state = {
 			isPopoverOpen: false,
 			src: '',
-			hobbysrc: '/hobby-climb2.png',
+			hobbysrc: '/hobby-climb2.jpg',
 			hobbytext: 'Climbing at Klättercentret Akalla, Stockholm.',
 			activebutton: ''
 		};

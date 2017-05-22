@@ -57,6 +57,9 @@ Homepage
 			    width: 22em;
 			}
 		}
+		@media (min-width: 2000px) {
+	    	background: url("/background-giant.png") fixed center no-repeat;
+		}
 
 		@media all and (orientation: portrait) {
 			background-size: auto 100%;
