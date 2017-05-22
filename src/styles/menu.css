@@ -1,0 +1,130 @@
+/*
+Menu
+ */
+.menu {
+  position: fixed;
+  z-index: 1;
+  top: 1em;
+  left: 1em; }
+  .menu-enter {
+    opacity: 0.01; }
+    .menu-enter.menu-enter-active {
+      opacity: 1;
+      -webkit-transition: opacity 200ms ease-in;
+      -moz-transition: opacity 200ms ease-in;
+      transition: opacity 200ms ease-in; }
+  .menu-leave {
+    opacity: 1; }
+    .menu-leave.menu-leave-active {
+      opacity: 0.01;
+      -webkit-transition: opacity 100ms ease-in;
+      -moz-transition: opacity 100ms ease-in;
+      transition: opacity 100ms ease-in; }
+  .menu .btn-menu {
+    background-color: transparent;
+    text-align: left;
+    border: none; }
+    .menu .btn-menu > div {
+      cursor: pointer; }
+    .menu .btn-menu span.lines {
+      position: relative;
+      display: inline-block;
+      width: 25px;
+      height: 3px;
+      margin: 8px 0;
+      border-radius: 1px;
+      vertical-align: middle;
+      background-color: #303030;
+      -webkit-transition: background 0s 0.3s;
+      -moz-transition: background 0s 0.3s;
+      transition: background 0s 0.3s; }
+      .menu .btn-menu span.lines:before, .menu .btn-menu span.lines:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 1px;
+        background-color: #303030;
+        content: "";
+        -webkit-transition-duration: 0.3s, 0.3s;
+        -moz-transition-duration: 0.3s, 0.3s;
+        -webkit-transition-delay: 0.3s, 0s;
+        -moz-transition-delay: 0.3s, 0s;
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s; }
+      .menu .btn-menu span.lines:before {
+        top: -8px;
+        -webkit-transition-property: top, transform;
+        -moz-transition-property: top, transform;
+        transition-property: top, transform; }
+      .menu .btn-menu span.lines:after {
+        bottom: -8px;
+        -webkit-transition-property: bottom, transform;
+        -moz-transition-property: bottom, transform;
+        transition-property: bottom, transform; }
+  .menu ul.sidebar-nav {
+    list-style-type: none;
+    padding-left: 2em; }
+    .menu ul.sidebar-nav li {
+      font-weight: bold;
+      font-family: 'Josefin Slab', serif;
+      margin: 2em 0 0; }
+      .menu ul.sidebar-nav li .sidebar-nav-item {
+        color: #303030;
+        border-bottom: none;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s; }
+        .menu ul.sidebar-nav li .sidebar-nav-item span {
+          display: inline-block;
+          width: 15px;
+          height: 3px;
+          margin-right: 0.5em;
+          border-radius: 1px;
+          vertical-align: middle;
+          background-color: #303030;
+          -webkit-transition: width 0.3s 0s;
+          -moz-transition: width 0.3s 0s;
+          transition: width 0.3s 0s; }
+        .menu ul.sidebar-nav li .sidebar-nav-item:hover span {
+          width: 25px; }
+        .menu ul.sidebar-nav li .sidebar-nav-item.active {
+          color: #d9ead3;
+          pointer-events: none; }
+          .menu ul.sidebar-nav li .sidebar-nav-item.active span {
+            background-color: #d9ead3; }
+
+@media (max-width: 767px) {
+  .menu {
+    top: 2.3em;
+    left: 2em; }
+    .menu .btn-menu span.lines {
+      width: 20px;
+      height: 2px; }
+      .menu .btn-menu span.lines:before, .menu .btn-menu span.lines:after {
+        height: 2px; }
+      .menu .btn-menu span.lines:before {
+        top: -6px; }
+      .menu .btn-menu span.lines:after {
+        bottom: -6px; }
+    .menu .rotated-background {
+      background-color: #1db7a9;
+      position: absolute;
+      top: -0.3em;
+      width: 32px;
+      height: 32px;
+      box-shadow: 0 0 5px #888888;
+      z-index: -1;
+      transform: rotate(45deg);
+      -webkit-transition: all 200ms ease-in-out;
+      -moz-transition: all 200ms ease-in-out;
+      transition: all 200ms ease-in-out; }
+      .menu .rotated-background.active {
+        transform: rotate(0deg);
+        width: 140px;
+        height: 210px; }
+    .menu ul.sidebar-nav li {
+      margin: 1.5em 0; }
+      .menu ul.sidebar-nav li .sidebar-nav-item span {
+        height: 2px; } }

@@ -1,0 +1,73 @@
+/*
+Homepage
+ */
+.home {
+  height: 100%;
+  width: 100%; }
+  .home .masthead {
+    background-color: transparent;
+    text-align: center; }
+  .home .img-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("/background-small.png") fixed center no-repeat;
+    text-align: center;
+    /* Align center inline elements */
+    z-index: -1; }
+    .home .img-container:before {
+      content: ' ';
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%; }
+    .home .img-container img {
+      vertical-align: middle;
+      display: inline-block;
+      width: 12em; }
+    @media (min-width: 480px) {
+      .home .img-container img {
+        width: 15em; } }
+    @media (min-width: 768px) {
+      .home .img-container {
+        background: url("/background-medium.png") fixed center no-repeat; }
+        .home .img-container img {
+          width: 20em; } }
+    @media (min-width: 1200px) {
+      .home .img-container {
+        background: url("/background-big.png") fixed center no-repeat; }
+        .home .img-container img {
+          width: 22em; } }
+    @media all and (orientation: portrait) {
+      .home .img-container {
+        background-size: auto 100%; } }
+    @media all and (orientation: landscape) {
+      .home .img-container {
+        background-size: 100% auto; } }
+  .home .footer-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+    .home .footer-nav ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: center; }
+      .home .footer-nav ul li {
+        display: inline-block;
+        margin: 0 10%; }
+        @media (max-width: 480px) {
+          .home .footer-nav ul li {
+            margin: 0 1em; } }
+    .home .footer-nav a.footer-nav-item {
+      color: #303030;
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold; }
+      .home .footer-nav a.footer-nav-item:hover, .home .footer-nav a.footer-nav-item:focus {
+        border-bottom: dotted 1px #303030; }
+  @media (min-width: 768px) {
+    .home .footer-nav ul {
+      margin-bottom: 2em; }
+    .home .masthead h3 {
+      margin-top: 2em; } }
