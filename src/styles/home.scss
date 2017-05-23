@@ -21,7 +21,7 @@ Homepage
 	    bottom: 0;
 	    left: 0;
 	    right: 0;
-	    background: url("/background-small.png") fixed center no-repeat;
+	    background: url("/background-small.jpg") fixed center no-repeat;
 	    text-align: center; /* Align center inline elements */
 	    z-index: -1;
 
@@ -35,30 +35,34 @@ Homepage
 		img {
 		    vertical-align: middle;
 		    display: inline-block;
-		    width: 12em;
+		    width: auto;
+		    max-width: 12em;
+		    max-height: 50%
 		}
 
 		@media (min-width: 480px) {
+			background: url("/background-small.jpg") fixed center no-repeat;
+
 	    	img {
-			    width: 15em;
+			    max-width: 15em;
 			}
 		}
 	    @media (min-width: 768px) {
-	    	background: url("/background-medium.png") fixed center no-repeat;
+	    	background: url("/background-medium.jpg") fixed center no-repeat;
 
 	    	img {
-			    width: 20em;
+			    max-width: 20em;
 			}
 		}
 	    @media (min-width: 1200px) {
-	    	background: url("/background-big.png") fixed center no-repeat;
+	    	background: url("/background-big.jpg") fixed center no-repeat;
 	    	
 	    	img {
-			    width: 22em;
+			    max-width: 22em;
 			}
 		}
 		@media (min-width: 2000px) {
-	    	background: url("/background-giant.png") fixed center no-repeat;
+	    	background: url("/background-giant.jpg") fixed center no-repeat;
 		}
 
 		@media all and (orientation: portrait) {

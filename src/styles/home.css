@@ -1,6 +1,24 @@
 /*
 Homepage
  */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
+
 .home {
   height: 100%;
   width: 100%; }
@@ -13,7 +31,7 @@ Homepage
     bottom: 0;
     left: 0;
     right: 0;
-    background: url("/background-small.png") fixed center no-repeat;
+    background: url("/background-small.jpg") fixed center no-repeat;
     text-align: center;
     /* Align center inline elements */
     z-index: -1; }
@@ -25,23 +43,27 @@ Homepage
     .home .img-container img {
       vertical-align: middle;
       display: inline-block;
-      width: 12em; }
+      width: auto;
+      max-width: 12em;
+      max-height: 50%; }
     @media (min-width: 480px) {
-      .home .img-container img {
-        width: 15em; } }
+      .home .img-container {
+        background: url("/background-small.jpg") fixed center no-repeat; }
+        .home .img-container img {
+          max-width: 15em; } }
     @media (min-width: 768px) {
       .home .img-container {
-        background: url("/background-medium.png") fixed center no-repeat; }
+        background: url("/background-medium.jpg") fixed center no-repeat; }
         .home .img-container img {
-          width: 20em; } }
+          max-width: 20em; } }
     @media (min-width: 1200px) {
       .home .img-container {
-        background: url("/background-big.png") fixed center no-repeat; }
+        background: url("/background-big.jpg") fixed center no-repeat; }
         .home .img-container img {
-          width: 22em; } }
+          max-width: 22em; } }
     @media (min-width: 2000px) {
       .home .img-container {
-        background: url("/background-giant.png") fixed center no-repeat; } }
+        background: url("/background-giant.jpg") fixed center no-repeat; } }
     @media all and (orientation: portrait) {
       .home .img-container {
         background-size: auto 100%; } }

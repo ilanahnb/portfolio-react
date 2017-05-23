@@ -1,0 +1,55 @@
+/*
+Contact
+*/
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
+
+.social-nav ul {
+  list-style: none;
+  padding: 0.5em 0; }
+  .social-nav ul li {
+    display: inline-block;
+    margin-right: 1em; }
+
+.social-nav img {
+  max-width: 35px;
+  max-height: 35px; }
+
+@media (min-width: 768px) {
+  .full-height-div {
+    max-width: 1400px;
+    margin: 0 auto; }
+    .full-height-div .container {
+      position: initial; }
+      .full-height-div .container .white-box {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-left: 20%;
+        overflow: hidden;
+        z-index: -1;
+        /* Remove this line if it's not going to be a background! */ } }
+
+@media (min-width: 1200px) {
+  .full-height-div .container .white-box {
+    margin: 0 auto;
+    width: 70%;
+    max-width: 980px; } }

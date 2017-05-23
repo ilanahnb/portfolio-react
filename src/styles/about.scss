@@ -1,0 +1,238 @@
+/*
+About
+*/
+
+
+@import "./globals.scss";
+
+
+.my-picture {
+	&-small {
+		width: 100%;
+	}
+	&-big {
+		display: none;
+	}
+}
+
+.popover {
+    position: absolute;
+    display: block;
+    opacity: 1;
+    background: #fff;
+    max-height: 273px;
+    padding: 0.5em;
+    right: 2em;
+    box-shadow: 0 0 5px #888888;
+
+    .triangle {
+		position: absolute;
+		top: -19px;
+		right: 5%;
+		color: white;
+		font-size: 1.2em;
+		text-shadow: 0 -2px 2px #999999;
+    }
+
+    img {
+    	max-width: 100%;
+    }
+
+    @media (max-width: 860px) {
+    	max-width: calc(80% - 11em);
+    }
+
+    @media (max-width: 767px) {
+      	max-width: 80%;
+    }
+}
+
+.skill-item {
+	margin: 0.8em 0;
+
+	.circle {
+		float: right;
+
+		&-full,
+		&-empty {
+			height: 0.8em;
+			width: 0.8em;
+			display: inline-block;
+			border-radius: 50%;
+			margin-left: 0.2em;
+		}
+
+		&-full {
+			background-color: $color-green;
+		}
+
+		&-empty {
+			background-color: $color-light-green;
+		}
+
+		a {
+			cursor: pointer;
+		}
+	}
+
+	.text {
+		float: right;
+		cursor: pointer;
+	}
+}
+
+
+.hobby-wrap {
+	margin: 0 -5px;
+
+	.hobby-item {
+		display: inline-block;
+		box-sizing: border-box;
+		width: 20%;
+		color: inherit;
+		background: none;
+		cursor: pointer;
+		font: inherit;
+		text-align: center;
+		padding: 5px;
+		margin: 0.5em 0;
+		border: 0;
+
+		img {
+			display: block;
+			max-width: 50px;
+			margin: auto;
+		}
+
+		.text {
+			padding-top: 0.5em;
+		}
+
+		&:hover {
+			.text small {
+				border-bottom: dotted 1px $text-color;
+			}
+		}
+
+		&.active {
+			.text small {
+				font-weight: bold;
+				color: $color-green;
+				border-bottom: dotted 1px $color-green;
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		.hobby-item {
+	    	padding: 0 5px;
+
+			img {
+				max-width: 35px;
+			}
+		}
+	}
+
+	@media (max-width: 400px) {
+		.hobby-item {
+			width: 25%;
+			min-height: 64px;
+			margin: 0;
+
+	    	img {
+				max-width: 30px;
+			}
+
+			.text {
+				padding-top: 0.2em;
+				font-size: .95em;
+			}
+		}
+	}
+}
+
+.hobby-image {
+	text-align: center;
+	padding: 0.5em;
+	margin-top: 1.5em;
+	box-sizing: border-box;
+	box-shadow: 0 0 5px #888888;
+
+	p {
+		margin: 0.5em 0;
+	}
+
+	img {
+		max-width: 100%;
+		margin-bottom: -5px;
+	}
+
+	@media (max-width: 400px) {
+		padding: 5px 0 0 0;
+		margin-top: 0.5em;
+	}
+}
+
+
+
+@media (min-width: 768px) {
+
+	.menu-plus-picture {
+		position: fixed;
+		top: 0;
+		width: 20%;
+		z-index: 1;
+
+		.menu {
+			position: initial;
+			margin-top: 1em;
+			margin-left: 1em;
+		}
+
+		.my-picture-big {
+			display: inherit;
+			position: relative;
+			margin-top: 3em;
+			margin-left: 2em;
+			width: 100%;
+			background-color: white;
+			padding: 0.5em;
+			box-shadow: 0 0 5px #888888;
+		}
+	}
+
+	.my-picture-small {
+		display: none;
+	}
+
+	.popover {
+		right: 5em;
+	}
+}
+
+
+@media (min-width: 1200px) {
+	.menu-plus-picture {
+		width: 15%;
+
+		.my-picture-big {
+			width: 115%;
+		}
+	}
+
+	.popover {
+		right: 8em;
+	}
+}
+
+
+@media (min-width: 1400px) {
+	.menu-plus-picture {
+		.my-picture-big {
+			max-width: 15em;
+		}
+	}
+}
+
+
+

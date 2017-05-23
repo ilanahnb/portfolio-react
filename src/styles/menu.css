@@ -1,11 +1,29 @@
 /*
 Menu
  */
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Josefin Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Dancing Script';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
+
 .menu {
   position: fixed;
   z-index: 1;
   top: 1em;
-  left: 1em; }
+  margin-left: 1em; }
   .menu-enter {
     opacity: 0.01; }
     .menu-enter.menu-enter-active {
@@ -13,6 +31,11 @@ Menu
       -webkit-transition: opacity 200ms ease-in;
       -moz-transition: opacity 200ms ease-in;
       transition: opacity 200ms ease-in; }
+      @media (max-width: 767px) {
+        .menu-enter.menu-enter-active {
+          -webkit-transition: opacity 200ms ease-in 100ms;
+          -moz-transition: opacity 200ms ease-in 100ms;
+          transition: opacity 200ms ease-in 100ms; } }
   .menu-leave {
     opacity: 1; }
     .menu-leave.menu-leave-active {
@@ -20,25 +43,25 @@ Menu
       -webkit-transition: opacity 100ms ease-in;
       -moz-transition: opacity 100ms ease-in;
       transition: opacity 100ms ease-in; }
-  .menu .btn-menu {
+  .menu .menu-layer {
     background-color: transparent;
     text-align: left;
-    border: none; }
-    .menu .btn-menu > div {
-      cursor: pointer; }
-    .menu .btn-menu span.lines {
+    border: none;
+    padding: 0;
+    cursor: pointer; }
+    .menu .menu-layer .lines {
       position: relative;
       display: inline-block;
       width: 25px;
       height: 3px;
-      margin: 8px 0;
       border-radius: 1px;
-      vertical-align: middle;
+      margin: 6px 0;
+      vertical-align: sub;
       background-color: #303030;
       -webkit-transition: background 0s 0.3s;
       -moz-transition: background 0s 0.3s;
       transition: background 0s 0.3s; }
-      .menu .btn-menu span.lines:before, .menu .btn-menu span.lines:after {
+      .menu .menu-layer .lines:before, .menu .menu-layer .lines:after {
         position: absolute;
         display: block;
         left: 0;
@@ -53,19 +76,20 @@ Menu
         -moz-transition-delay: 0.3s, 0s;
         transition-duration: 0.3s, 0.3s;
         transition-delay: 0.3s, 0s; }
-      .menu .btn-menu span.lines:before {
+      .menu .menu-layer .lines:before {
         top: -8px;
         -webkit-transition-property: top, transform;
         -moz-transition-property: top, transform;
         transition-property: top, transform; }
-      .menu .btn-menu span.lines:after {
+      .menu .menu-layer .lines:after {
         bottom: -8px;
         -webkit-transition-property: bottom, transform;
         -moz-transition-property: bottom, transform;
         transition-property: bottom, transform; }
   .menu ul.sidebar-nav {
     list-style-type: none;
-    padding-left: 2em; }
+    padding-left: 1em;
+    line-height: 1em; }
     .menu ul.sidebar-nav li {
       font-weight: bold;
       font-family: 'Josefin Slab', serif;
@@ -97,34 +121,78 @@ Menu
 
 @media (max-width: 767px) {
   .menu {
-    top: 2.3em;
-    left: 2em; }
-    .menu .btn-menu span.lines {
-      width: 20px;
-      height: 2px; }
-      .menu .btn-menu span.lines:before, .menu .btn-menu span.lines:after {
-        height: 2px; }
-      .menu .btn-menu span.lines:before {
-        top: -6px; }
-      .menu .btn-menu span.lines:after {
-        bottom: -6px; }
-    .menu .rotated-background {
-      background-color: #1db7a9;
-      position: absolute;
-      top: -0.3em;
-      width: 32px;
-      height: 32px;
-      box-shadow: 0 0 5px #888888;
-      z-index: -1;
-      transform: rotate(45deg);
-      -webkit-transition: all 200ms ease-in-out;
-      -moz-transition: all 200ms ease-in-out;
-      transition: all 200ms ease-in-out; }
-      .menu .rotated-background.active {
-        transform: rotate(0deg);
-        width: 140px;
-        height: 210px; }
-    .menu ul.sidebar-nav li {
-      margin: 1.5em 0; }
-      .menu ul.sidebar-nav li .sidebar-nav-item span {
-        height: 2px; } }
+    top: 2.45em;
+    margin-left: 2em; }
+    .menu .menu-layer {
+      position: fixed;
+      top: 1em;
+      left: 1em;
+      display: block;
+      width: 45.5px;
+      height: 4em;
+      margin: 0 auto;
+      text-align: center;
+      -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+      transform-origin: center center;
+      z-index: -1; }
+      .menu .menu-layer .rotated-background {
+        background-color: #1db7a9;
+        width: 32px;
+        height: 32px;
+        box-shadow: 0 0 5px #888888;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transform-origin: left bottom;
+        -ms-transform-origin: left bottom;
+        transform-origin: left bottom;
+        -webkit-transition: all 200ms ease-in-out;
+        -moz-transition: all 200ms ease-in-out;
+        transition: all 200ms ease-in-out; }
+        .menu .menu-layer .rotated-background.active {
+          top: 0.6em;
+          width: 150px;
+          height: 210px;
+          -moz-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: all 200ms ease-in-out;
+          -moz-transition: all 200ms ease-in-out;
+          transition: all 200ms ease-in-out; }
+      .menu .menu-layer .lines {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 2px;
+        left: 0;
+        top: 1.45em;
+        -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+        transform-origin: center center;
+        background-color: #303030;
+        border-radius: 1px; }
+        .menu .menu-layer .lines:before, .menu .menu-layer .lines:after {
+          content: '';
+          display: block;
+          width: 20px;
+          height: 2px;
+          position: absolute;
+          background: #303030;
+          border-radius: 1px; }
+        .menu .menu-layer .lines:before {
+          top: -6px; }
+        .menu .menu-layer .lines:after {
+          bottom: -6px; }
+    .menu > span {
+      z-index: 1; }
+      .menu > span ul.sidebar-nav li {
+        margin: 1.5em 0; }
+        .menu > span ul.sidebar-nav li:first-child {
+          margin-top: 2.5em; }
+        .menu > span ul.sidebar-nav li .sidebar-nav-item span {
+          height: 2px; } }

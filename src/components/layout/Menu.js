@@ -63,15 +63,10 @@ export class Menu extends Component {
 	    return (
 			<nav className="menu">
 
-				<div className={active}></div>
-
-				<button className="btn-menu" type="button" onClick={this.toggleMenu}>
-
-					<div>
-			        	<span className="lines"></span>
-			        </div>
-
-			    </button>
+				<div className="menu-layer" onClick={this.toggleMenu}>
+					<div className={active}></div>
+				    <span className="lines"></span>
+				</div>
 
 				<CSSTransitionGroup
 					transitionName="menu"
