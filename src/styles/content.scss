@@ -68,6 +68,9 @@ Row
     overflow: hidden;
     
     .col-6 {
+      &:last-child {
+        margin-top: 2em;
+      }
 
       @media (min-width: 600px) and (max-width: 767px), (min-width: 860px) {
         width: 50%;
@@ -80,6 +83,7 @@ Row
 
         &:last-child {
           padding-left: 1em;
+          margin-top: 0;
         }
       }
     }

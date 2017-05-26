@@ -1,24 +1,6 @@
 /*
 Menu
  */
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Dancing Script';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
-
 .menu {
   position: fixed;
   z-index: 1;

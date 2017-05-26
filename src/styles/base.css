@@ -2,24 +2,6 @@
 HTML
 Body
 */
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Dancing Script';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
-
 html,
 body {
   color: #303030; }
@@ -41,12 +23,12 @@ h1, h2 {
   text-align: center; }
 
 h1 {
-  font-size: 4em;
+  font-size: 3.5em;
   margin: 0 0 0.5em; }
 
 h2 {
   font-size: 2em;
-  margin-top: 2em; }
+  margin: 1em 0 0.5em 0; }
 
 h3 {
   font-size: 1.3em; }
@@ -68,8 +50,19 @@ mark {
 button:focus {
   outline: none; }
 
+@media (min-width: 401px) {
+  h1 {
+    font-size: 4em; }
+  h2 {
+    font-size: 2em; }
+  h3 {
+    font-size: 1.3em; } }
+
 @media (min-width: 768px) {
   body {
     background: #1db7a9; }
+  h2 {
+    margin-top: 1.5em;
+    margin-top: 2em; }
   p {
     line-height: 1.5em; } }

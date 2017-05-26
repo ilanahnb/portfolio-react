@@ -1,31 +1,10 @@
 /*
 Portfolio
 */
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Dancing Script';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
-
-.screens {
+.screens img {
   max-width: 100%; }
 
 .github-icon {
   max-height: 1.3em;
   vertical-align: text-bottom;
   margin-right: 0.5em; }
-
-.git-repo {
-  margin-top: 2em; }

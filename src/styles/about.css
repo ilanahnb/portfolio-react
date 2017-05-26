@@ -1,28 +1,10 @@
 /*
 About
 */
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Dancing Script';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
-
-.my-picture-small {
+.my-picture-small img {
   width: 100%; }
 
-.my-picture-big {
+.my-picture-big, .my-picture-big img {
   display: none; }
 
 .popover {
@@ -36,13 +18,14 @@ About
   box-shadow: 0 0 5px #888888; }
   .popover .triangle {
     position: absolute;
-    top: -19px;
+    top: -0.9em;
     right: 5%;
     color: white;
     font-size: 1.2em;
     text-shadow: 0 -2px 2px #999999; }
   .popover img {
-    max-width: 100%; }
+    max-width: 100%;
+    vertical-align: bottom; }
   @media (max-width: 860px) {
     .popover {
       max-width: calc(80% - 11em); } }
@@ -122,7 +105,7 @@ About
     margin: 0.5em 0; }
   .hobby-image img {
     max-width: 100%;
-    margin-bottom: -5px; }
+    vertical-align: middle; }
   @media (max-width: 400px) {
     .hobby-image {
       padding: 5px 0 0 0;
@@ -139,15 +122,18 @@ About
       margin-top: 1em;
       margin-left: 1em; }
     .menu-plus-picture .my-picture-big {
-      display: inherit;
-      position: relative;
-      margin-top: 3em;
-      margin-left: 2em;
-      width: 100%;
-      background-color: white;
-      padding: 0.5em;
-      box-shadow: 0 0 5px #888888; }
-  .my-picture-small {
+      display: inherit; }
+      .menu-plus-picture .my-picture-big img {
+        display: inherit;
+        position: relative;
+        width: 100%;
+        margin-top: 3em;
+        margin-left: 2em;
+        width: 100%;
+        background-color: white;
+        padding: 0.5em;
+        box-shadow: 0 0 5px #888888; }
+  .my-picture-small, .my-picture-small img {
     display: none; }
   .popover {
     right: 5em; } }
@@ -155,11 +141,11 @@ About
 @media (min-width: 1200px) {
   .menu-plus-picture {
     width: 15%; }
-    .menu-plus-picture .my-picture-big {
+    .menu-plus-picture .my-picture-big img {
       width: 115%; }
   .popover {
     right: 8em; } }
 
 @media (min-width: 1400px) {
-  .menu-plus-picture .my-picture-big {
+  .menu-plus-picture .my-picture-big img {
     max-width: 15em; } }

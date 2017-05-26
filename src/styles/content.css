@@ -5,24 +5,6 @@ Masthead
 Content
 Row
 */
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Josefin Slab"), url("/Josefin Slab regular.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Josefin Slab 700"), url("/Josefin Slab 700.ttf") format("truetype"); }
-
-@font-face {
-  font-family: 'Dancing Script';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Dancing Script"), url("/Dancing Script 700.ttf") format("truetype"); }
-
 /* Wrap */
 .wrap {
   max-width: 1400px;
@@ -59,6 +41,8 @@ Row
     border-bottom: dotted 1px #1db7a9; }
   .content .row {
     overflow: hidden; }
+    .content .row .col-6:last-child {
+      margin-top: 2em; }
     @media (min-width: 600px) and (max-width: 767px), (min-width: 860px) {
       .content .row .col-6 {
         width: 50%;
@@ -67,7 +51,8 @@ Row
         .content .row .col-6:first-child {
           padding-right: 1em; }
         .content .row .col-6:last-child {
-          padding-left: 1em; } }
+          padding-left: 1em;
+          margin-top: 0; } }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {

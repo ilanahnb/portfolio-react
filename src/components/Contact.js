@@ -1,10 +1,13 @@
 import React from 'react';
 import { Menu } from './layout/Menu';
 import { Header } from './layout/Header';
+import { ScrollToTopOnMount } from './layout/Scroll';
 
 
 export const Contact = () =>  (
 	<div>
+
+		<ScrollToTopOnMount/>
 	
 		<div className="wrap">
 			<Menu />

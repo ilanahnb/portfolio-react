@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Menu } from './layout/Menu';
 import { Header } from './layout/Header';
 import { Link } from 'react-router-dom';
+import { Image } from './layout/Image';
+import { ScrollToTopOnMount } from './layout/Scroll';
+
 
 
 const buttons = [
@@ -85,7 +88,10 @@ export class About extends Component {
 		this.state = {
 			isPopoverOpen: false,
 			src: '',
-			activebutton: false
+			activebutton: false,
+			imagesrc: '',
+			imagetext: '',
+			imageStatus: 'loading'
 		};
 	}
 
@@ -103,19 +109,30 @@ export class About extends Component {
 		});
 	}
 
-	setSrc(src, text, name) {
+	setSrc(text, src, name) {
 		this.setState({
-			hobbysrc: src,
-			hobbytext: text,
+			imagetext: text,
+			imagesrc: src,
 			activebutton: name
 		});
+	}
+
+	handleImageLoaded() {
+		this.setState({
+			imageStatus: 'loaded'
+		});
+	}
+
+	handleImageErrored() {
+		this.setState({
+			imageStatus: 'failed to load'});
 	}
 
 	render() {
 
 		const Button = ({icon, text, imagesrc, imagetext, name}) => (
 			<button className={this.state.activebutton === name ? 'hobby-item active' : 'hobby-item'}
-					onClick={() => this.setSrc(imagesrc, imagetext, name)}>
+					onClick={() => {this.setSrc(imagetext, imagesrc, name)}}>
 				<img src={icon} alt="Hobby icon" />
 				<div className="text"><small>{text}</small></div>
 			</button>
@@ -135,32 +152,40 @@ export class About extends Component {
 
 			<div className="wrap">
 
+				<ScrollToTopOnMount/>
+
 				<div className="menu-plus-picture">
 					<Menu />
-					<img src="/ilana-big.jpeg" className="my-picture-big" alt="Ilana's avatar" />
+					<Image src="/ilana-big.jpeg" alt="Ilana's avatar" class="my-picture-big" />
 				</div>
 
 				<div className="container">
 				
 					<Header />
 
-					<img src="/ilana-small.jpeg" className="my-picture-small" alt="Ilana's avatar" />
+					<Image src="/ilana-small.jpeg" alt="Ilana's avatar" class="my-picture-small" />
 
 					<div className="content">
 
 						<h1>About me</h1>
 
 						<p>
-							I am a Brazilian <mark>Front End Developer</mark> living in <mark>Sydney, Australia</mark>.
+							I am a Brazilian self-taught <mark>Front End Developer</mark> living in <mark>Sydney, Australia</mark>. Responsive web design and JavaScript programming are my passions.
 						</p>
 						<p>
-							<b>2015 &middot; </b>My first contact with HTML and CSS was late 2015. Since then I fell in love with front-end development and got thrilled by all the possibilities and opportunities.
+							My first contact with HTML and CSS was in <b>2014</b>. Since then I fell in love with front-end development and got thrilled by all the possibilities and opportunities.
 						</p>
 						<p>
-							<b>2016 &middot; </b>I spent several hours of my free time studying by myself to learn more about the amazing world of coding. During this time I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a> using MeteorJS and MongoDB.
+							In <b>2015</b> I started working at Fareoffice, a market leader in e-commerce solutions for the car rental industry. There I worked for over 2 years as Project Manager and Web Content Manager. I grew quickly in the company and became a stakeholder for different products. I was able to help to deliver the new websites within the deadlines, daily reporting to other stakeholders and ensuring quality.
 						</p>
 						<p>
-							I enjoy studying and have great interest in learning new technologies. I’m currently <mark>available for work</mark>. I am in the beginning of my career as a developer and seeking for an opportunity to work in a company where I can feel helpful, apply my creativity and learn from more experienced developers.
+							I spent several hours of my free time studying by myself to learn more about the amazing world of coding. In <b>2016</b> I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a> using MeteorJS and MongoDB.
+						</p>
+						<p>
+							<b>My goal</b> is to become an awesome and inspiring developer!
+						</p>
+						<p>
+							I enjoy studying and have great interest in learning new technologies. I am currently <mark>available for work</mark> and seeking an opportunity to work in a company where I can feel helpful, apply my creativity and learn from more experienced developers.
 						</p>
 						<p>
 							If you are the one that can offer me this opportunity, please feel free to <Link to="/contact">contact me</Link>!
@@ -337,9 +362,7 @@ export class About extends Component {
 								</div>
 								<Popover className="popover" isOpen={this.state.isPopoverOpen} onClose={() => this.closePopover()}>
 									<span className="triangle">&#x25b2;</span>
-									<div className="popover-content">
-										<img src={this.state.src} alt="Over 9000" />
-									</div>
+									<Image src="/over-9000.gif" alt="Over 9000" />
 								</Popover>
 
 								<div className="skill-item">
@@ -413,8 +436,8 @@ export class About extends Component {
 						{
 							this.state.activebutton ? 
 							<div className="hobby-image">
-								<p>{this.state.hobbytext}</p>
-								<img src={this.state.hobbysrc} alt="Hobby" />
+								<p>{this.state.imagetext}</p>
+								<Image src={this.state.imagesrc} alt="Hobby"  />
 							</div>
 							: null
 						}
@@ -428,6 +451,26 @@ export class About extends Component {
 
 
 class Popover extends Component {
+
+	constructor(props) {
+		super(props);
+		this.state = {
+			imageStatus: 'loading'
+		};
+	}
+
+	handleImageLoaded() {
+		this.setState({
+			imageStatus: 'loaded'
+		});
+	}
+
+	handleImageErrored() {
+		this.setState({
+			imageStatus: 'failed to load'
+		});
+	}
+
     render() {
 		if (this.props.isOpen === false)
 			return null

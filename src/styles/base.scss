@@ -30,13 +30,13 @@ h1, h2 {
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 3.5em;
 	margin: 0 0 0.5em;
 }
 
 h2 {
 	font-size: 2em;
-    margin-top: 2em;
+    margin: 1em 0 0.5em 0;
 }
 
 h3 {
@@ -67,9 +67,28 @@ button:focus {
 }
 
 
+@media (min-width: 401px) {
+	h1 {
+		font-size: 4em;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+}
+
 @media (min-width: 768px) {
 	body {
 	 	background: $color-green;
+	}
+
+	h2 {
+		margin-top: 1.5em;
+	    margin-top: 2em;
 	}
 
 	p {
