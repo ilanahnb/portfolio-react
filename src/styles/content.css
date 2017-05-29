@@ -61,7 +61,8 @@ Row
     .container .masthead {
       position: fixed;
       width: 80%;
-      top: 0; }
+      top: 0;
+      z-index: 4; }
       .container .masthead .opaque-background {
         position: absolute;
         height: 100%;

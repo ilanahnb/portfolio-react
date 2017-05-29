@@ -108,9 +108,10 @@ svg {
   display: none;
 }
 
-.hobby-image .img-loading {
-  display: initial;
-  opacity: 0;
+.hobby-image {
+  .loading-box {
+    margin-top: calc(37.5% - .75em);
+    margin-bottom: calc(37.5% - .75em);
+  }
 }
-
 

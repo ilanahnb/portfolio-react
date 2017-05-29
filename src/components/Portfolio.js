@@ -36,7 +36,7 @@ export class Portfolio extends Component {
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, jQuery, Meteor, Node, MongoDB, Bootstrap, LESS, RESTful API.</small></p>
 
-						<Image src="/screens-purrcipes.jpg" alt="Purrcipes screens" class="screens" />
+						<Image src="/screens-purrcipes.jpeg" alt="Purrcipes screens" class="screens" />
 
 
 						<h2>My Portfolio</h2>
@@ -52,7 +52,7 @@ export class Portfolio extends Component {
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, React, SASS.</small></p>
 
-						<Image src="/screens-portfolio.jpg" alt="Portfolio screens" class="screens" />
+						<Image src="/screens-portfolio.jpeg" alt="Portfolio screens" class="screens" />
 
 					</div>
 				</div>

@@ -3,80 +3,161 @@ import { Menu } from './layout/Menu';
 import { Header } from './layout/Header';
 import { Link } from 'react-router-dom';
 import { Image } from './layout/Image';
+import { Carousel } from './Carousel';
 import { ScrollToTopOnMount } from './layout/Scroll';
 
 
 
-const buttons = [
+const hobbies = [
 	{
 		icon: '/icon-climb.png',
 		text: 'Rock Climbing',
-		imagesrc: '/hobby-climb2.jpeg',
-		imagetext: 'Climbing at Klättercentret Akalla, Stockholm.',
-		name: 'climb'
+		name: 'climb',
+		images: [
+			{
+				imagesrc: '/hobby-climb1.jpg',
+				imagetext: 'Climbing at Klättercentret Akalla, Stockholm.'
+			},
+			{
+				imagesrc: '/hobby-climb2.jpg',
+				imagetext: 'High five!'
+			}
+		]
 	},
 	{
 		icon: '/icon-game.png',
 		text: 'Videogames',
-		imagesrc: '/hobby-video-game.jpeg',
-		imagetext: 'Playing Rocket League!',
-		name: 'game'
+		name: 'game',
+		images: [
+			{
+				imagesrc: '/hobby-video-game.jpg',
+				imagetext: 'Playing Rocket League!'
+			}
+		]
 	},
 	{
 		icon: '/icon-dice.png',
 		text: 'Board games',
-		imagesrc: '/hobby-boardgame.jpeg',
-		imagetext: 'Oh no! A feral troll!',
-		name: 'boardgame'
+		name: 'boardgame',
+		images: [
+			{
+				imagesrc: '/hobby-boardgame.jpg',
+				imagetext: 'Oh no, a feral troll! (D&D - The Legend of Drizzt)'
+			}
+		]
 	},
 	{
 		icon: '/icon-book.png',
 		text: 'Read',
-		imagesrc: '/hobby-read.jpeg',
-		imagetext: 'Reading Game of Thrones.',
-		name: 'read'
+		name: 'read',
+		images: [
+			{
+				imagesrc: '/hobby-read.jpg',
+				imagetext: 'Reading Game of Thrones.'
+			}
+		]
 	},
 	{
 		icon: '/icon-draw.png',
 		text: 'Draw & Paint',
-		imagesrc: '/hobby-draw.jpeg',
-		imagetext: 'Drawing.',
-		name: 'draw'
+		name: 'draw',
+		images: [
+			{
+				imagesrc: '/hobby-draw.jpg',
+				imagetext: 'Drawing.'
+			},
+			{
+				imagesrc: '/hobby-draw2.jpg',
+				imagetext: 'Indoor climbing.'
+			}
+		]
 	},
 	{
 		icon: '/icon-familyfriends.png',
 		text: 'Family & Friends',
-		imagesrc: '/hobby-familyfriends.jpeg',
-		imagetext: 'Me and my husband ♥',
-		name: 'familyfriends'
+		name: 'familyfriends',
+		images: [
+			{
+				imagesrc: '/hobby-familyfriends.jpg',
+				imagetext: 'My husband and I ♥'
+			},
+			{
+				imagesrc: '/hobby-familyfriends2.jpg',
+				imagetext: 'Overkilled! At my sister\'s Halloween Party.'
+			},
+			{
+				imagesrc: '/hobby-familyfriends3.jpg',
+				imagetext: 'Adventures in Stockholm with Patricia and Kris!'
+			}
+		]
 	},
 	{
 		icon: '/icon-cat.png',
 		text: 'Cats',
-		imagesrc: '/hobby-cat2.jpeg',
-		imagetext: 'Panqueca & Jello.',
-		name: 'cat'
+		name: 'cats',
+		images: [
+			{
+				imagesrc: '/hobby-cats1.jpg',
+				imagetext: 'Panqueca & Jello.'
+			},
+			{
+				imagesrc: '/hobby-cats6.jpg',
+				imagetext: 'If I fit, I sit.'
+			},
+			{
+				imagesrc: '/hobby-cats7.jpg',
+				imagetext: 'Taking Panqueca for a walk.'
+			},
+			{
+				imagesrc: '/hobby-cats5.jpg',
+				imagetext: 'So tired!'
+			}
+		]
 	},
 	{
 		icon: '/icon-fitness.png',
 		text: 'Fitness',
-		imagesrc: '/hobby-fitness.jpeg',
-		imagetext: 'Lifting some weight.',
-		name: 'fitness'
+		name: 'fitness',
+		images: [
+			{
+				imagesrc: '/hobby-fitness.jpg',
+				imagetext: 'Lifting some weight.'
+			},
+			{
+				imagesrc: '/hobby-fitness2.jpg',
+				imagetext: 'Run, Forrest, Run! (Mental Health Run, Stockholm)'
+			}
+		]
 	},
 	{
 		icon: '/icon-beach.png',
-		text: 'Beach',
-		imagesrc: '/hobby-beach.jpeg',
-		imagetext: 'Anse Lazio beach in Praslin, Seychelles.',
-		name: 'beach'
+		text: 'Travel',
+		name: 'travel',
+		images: [
+			{
+				imagesrc: '/hobby-travel1.jpg',
+				imagetext: 'Madeira Island, Portugal.'
+			},
+			{
+				imagesrc: '/hobby-travel2.jpg',
+				imagetext: 'Anse Lazio beach in Praslin, Seychelles.'
+			},
+			{
+				imagesrc: '/hobby-travel3.jpg',
+				imagetext: 'Free hugs! Oslo, Norway.'
+			}
+		]
 	},
 	{
 		icon: '/icon-code.png',
 		text: 'Coding',
-		imagesrc: '/hobby-coding.jpeg',
-		imagetext: 'Can\'t... stop... coding...',
-		name: 'code'
+		name: 'code',
+		images: [
+			{
+				imagesrc: '/hobby-coding.jpg',
+				imagetext: 'Can\'t... stop... coding...'
+			}
+		]
 	}
 ]
 
@@ -91,7 +172,8 @@ export class About extends Component {
 			activebutton: false,
 			imagesrc: '',
 			imagetext: '',
-			imageStatus: 'loading'
+			imageStatus: 'loading',
+			carousel: ''
 		};
 	}
 
@@ -117,32 +199,30 @@ export class About extends Component {
 		});
 	}
 
-	handleImageLoaded() {
+	handleCarousel(images) {
 		this.setState({
-			imageStatus: 'loaded'
+			carousel: images
 		});
-	}
-
-	handleImageErrored() {
-		this.setState({
-			imageStatus: 'failed to load'});
 	}
 
 	render() {
 
-		const Button = ({icon, text, imagesrc, imagetext, name}) => (
+		const Button = ({icon, text, name, images}) => (
 			<button className={this.state.activebutton === name ? 'hobby-item active' : 'hobby-item'}
-					onClick={() => {this.setSrc(imagetext, imagesrc, name)}}>
+					onClick={() => {
+						this.setSrc(images[0].imagetext, images[0].imagesrc, name);
+						this.handleCarousel(images);
+					}}>
 				<img src={icon} alt="Hobby icon" />
 				<div className="text"><small>{text}</small></div>
 			</button>
 		)
 
-		const Buttons = ({buttons}) => {
+		const Buttons = ({hobbies}) => {
 			return (
 				<div className="hobby-wrap">
-					{buttons.map((button, i) =>
-						<Button key={i} {...button} />
+					{hobbies.map((hobby, i) =>
+						<Button key={i} {...hobby} />
 					)}
 				</div>
 			)
@@ -431,14 +511,11 @@ export class About extends Component {
 
 						<h2>Passions & Hobbies</h2>
 
-						<Buttons buttons={buttons} />
+						<Buttons hobbies={hobbies} />
 
 						{
 							this.state.activebutton ? 
-							<div className="hobby-image">
-								<p>{this.state.imagetext}</p>
-								<Image src={this.state.imagesrc} alt="Hobby"  />
-							</div>
+							<Carousel carousel={this.state.carousel} />
 							: null
 						}
 
@@ -450,6 +527,8 @@ export class About extends Component {
 }
 
 
+
+
 class Popover extends Component {
 
 	constructor(props) {
@@ -457,18 +536,6 @@ class Popover extends Component {
 		this.state = {
 			imageStatus: 'loading'
 		};
-	}
-
-	handleImageLoaded() {
-		this.setState({
-			imageStatus: 'loaded'
-		});
-	}
-
-	handleImageErrored() {
-		this.setState({
-			imageStatus: 'failed to load'
-		});
 	}
 
     render() {
