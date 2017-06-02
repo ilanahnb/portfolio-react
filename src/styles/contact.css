@@ -3,10 +3,11 @@ Contact
 */
 .social-nav ul {
   list-style: none;
-  padding: 0.5em 0; }
+  padding: 0;
+  margin-top: 24px; }
   .social-nav ul li {
     display: inline-block;
-    margin-right: 1em; }
+    margin-right: 15px; }
 
 .social-nav img {
   max-width: 35px;

@@ -13,34 +13,43 @@ html {
 
 body {
   height: 100%;
-  /* force the BODY element to match the height of the HTML element */
+  /* force the body element to match the height of the HTML element */
   margin: 0;
   padding: 0;
   font-family: 'Josefin Slab', serif; }
 
-h1, h2 {
-  font-family: 'Dancing Script', cursive;
+h1, h2, blockquote, button.button-read {
+  font-family: 'Sniglet', cursive;
   text-align: center; }
+
+h1, h2, .content h3 {
+  color: #168b80; }
 
 h1 {
   font-size: 3.5em;
-  margin: 0 0 0.5em; }
+  /* 56px */
+  margin: 28px 0 0; }
 
 h2 {
   font-size: 2em;
-  margin: 1em 0 0.5em 0; }
+  /* 32px */
+  margin: 48px 0 16px; }
 
 h3 {
-  font-size: 1.3em; }
+  font-size: 1.375em;
+  /* 22px */ }
 
 p {
-  line-height: 1.2em; }
+  line-height: 24px; }
 
 a {
   text-decoration: none;
   color: #1db7a9; }
   a:hover {
     border-bottom: dotted 1px #1db7a9; }
+
+small {
+  font-size: 13px; }
 
 mark {
   background-color: #d9ead3;
@@ -52,17 +61,23 @@ button:focus {
 
 @media (min-width: 401px) {
   h1 {
-    font-size: 4em; }
+    font-size: 4em;
+    /* 64px */
+    margin-top: 16px; }
   h2 {
-    font-size: 2em; }
-  h3 {
-    font-size: 1.3em; } }
+    margin-top: 64px; }
+  small {
+    font-size: 14px; } }
 
 @media (min-width: 768px) {
   body {
     background: #1db7a9; }
-  h2 {
-    margin-top: 1.5em;
-    margin-top: 2em; }
+  h1 {
+    margin: 32px 0 0; }
+  p, span.title {
+    font-size: 1.125em;
+    /* 18px */ }
   p {
-    line-height: 1.5em; } }
+    line-height: 26px; }
+  small {
+    font-size: 16px; } }

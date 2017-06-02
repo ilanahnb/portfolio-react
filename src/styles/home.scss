@@ -36,7 +36,7 @@ Homepage
 		    vertical-align: middle;
 		    display: inline-block;
 		    width: auto;
-		    max-width: 12em;
+		    max-width: 60%;
 		    max-height: 50%
 		}
 
@@ -44,21 +44,21 @@ Homepage
 			background: url("/background-small.jpg") fixed center no-repeat;
 
 	    	img {
-			    max-width: 15em;
+			    max-width: 250px;
 			}
 		}
 	    @media (min-width: 768px) {
 	    	background: url("/background-medium.jpg") fixed center no-repeat;
 
 	    	img {
-			    max-width: 20em;
+			    max-width: 300px;
 			}
 		}
 	    @media (min-width: 1200px) {
 	    	background: url("/background-big.jpg") fixed center no-repeat;
 	    	
 	    	img {
-			    max-width: 22em;
+			    max-width: 350px;
 			}
 		}
 		@media (min-width: 2000px) {
@@ -88,7 +88,7 @@ Homepage
 				margin: 0 10%;
 
 				@media (max-width: 480px) {
-					margin: 0 1em;
+					margin: 0 15px;
 				}
 			}
 		}
@@ -107,11 +107,11 @@ Homepage
 
 	@media (min-width: 768px) {
 		.footer-nav ul {
-			margin-bottom: 2em;
+			margin-bottom: 40px;
 		}
     	
     	.masthead h3 {
-    		margin-top: 2em;
+    		margin-top: 40px;
     	}
 	}
 }

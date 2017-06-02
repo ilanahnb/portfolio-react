@@ -7,6 +7,66 @@ About
 .my-picture-big, .my-picture-big img {
   display: none; }
 
+.content .intro-title {
+  color: #1db7a9;
+  letter-spacing: 0.15em; }
+
+.content blockquote {
+  font-size: 1.125em;
+  /* 18px */
+  line-height: 26px;
+  padding: 0;
+  margin: 20px 0; }
+  @media (min-width: 401px) {
+    .content blockquote {
+      font-size: 1.25em;
+      /* 20px */
+      line-height: 28px;
+      margin: 24px; } }
+
+.content .about-text {
+  text-indent: 1.5em;
+  margin-top: 2em; }
+  .content .about-text .indented-text {
+    padding: 0 1.2em;
+    border-right: 0.2em solid #d9ead3;
+    border-left: 0.2em solid #d9ead3; }
+    @media (min-width: 401px) {
+      .content .about-text .indented-text {
+        border-right-width: 0.3em;
+        border-left-width: 0.3em; } }
+
+.content .read-more-enter {
+  opacity: 0.01; }
+  .content .read-more-enter.read-more-enter-active {
+    opacity: 1;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+
+.content .read-more-leave {
+  opacity: 1; }
+  .content .read-more-leave.read-more-leave-active {
+    opacity: 0.01;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out; }
+
+.content .button-centered {
+  text-align: center;
+  margin-top: 1.5em; }
+
+.content .button-read {
+  color: white;
+  background-color: #1db7a9;
+  font-size: 0.9em;
+  padding: 8px;
+  border: 1px solid #1db7a9;
+  margin-bottom: 15px; }
+  .content .button-read:hover {
+    cursor: pointer; }
+  .content .button-read-less {
+    background-color: transparent;
+    color: #1db7a9; }
+
 .popover {
   position: absolute;
   display: block;
@@ -54,7 +114,8 @@ About
     cursor: pointer; }
 
 .hobby-wrap {
-  margin: 0 -5px; }
+  margin: 0 -5px;
+  text-align: center; }
   .hobby-wrap .hobby-item {
     display: inline-block;
     box-sizing: border-box;
@@ -63,7 +124,6 @@ About
     background: none;
     cursor: pointer;
     font: inherit;
-    text-align: center;
     padding: 5px;
     margin: 0.5em 0;
     border: 0; }
@@ -72,13 +132,16 @@ About
       max-width: 50px;
       margin: auto; }
     .hobby-wrap .hobby-item .text {
-      padding-top: 0.5em; }
+      padding-top: 10px; }
     .hobby-wrap .hobby-item:hover .text small {
       border-bottom: dotted 1px #303030; }
     .hobby-wrap .hobby-item.active .text small {
       font-weight: bold;
       color: #1db7a9;
       border-bottom: dotted 1px #1db7a9; }
+  @media (max-width: 900px) {
+    .hobby-wrap .hobby-item img {
+      max-width: 40px; } }
   @media (max-width: 600px) {
     .hobby-wrap .hobby-item {
       padding: 0 5px; }
@@ -92,49 +155,37 @@ About
       .hobby-wrap .hobby-item img {
         max-width: 30px; }
       .hobby-wrap .hobby-item .text {
-        padding-top: 0.2em;
-        font-size: .95em; } }
-
-.hobby-image {
-  text-align: center;
-  padding: 0.5em;
-  margin-top: 1.5em;
-  box-sizing: border-box;
-  box-shadow: 0 0 5px #888888; }
-  .hobby-image p {
-    margin: 0.5em 0; }
-  .hobby-image img {
-    max-width: 100%;
-    vertical-align: middle; }
-  @media (max-width: 400px) {
-    .hobby-image {
-      padding: .5em 0 .1em 0;
-      margin-top: 0.5em; }
-      .hobby-image .carousel-slide {
-        margin-bottom: -.1em; } }
+        padding-top: 5px; } }
 
 @media (min-width: 768px) {
-  .menu-plus-picture {
+  .menu {
     position: fixed;
     top: 0;
+    margin-top: 1em;
+    margin-left: 1em; }
+  .menu-plus-picture {
     width: 20%;
     z-index: 1; }
-    .menu-plus-picture .menu {
-      position: initial;
-      margin-top: 1em;
-      margin-left: 1em; }
     .menu-plus-picture .my-picture-big {
-      display: inherit; }
+      display: inherit;
+      position: absolute;
+      top: 2em;
+      left: -1em;
+      z-index: -1; }
       .menu-plus-picture .my-picture-big img {
         display: inherit;
-        position: relative;
         width: 100%;
         margin-top: 3em;
         margin-left: 2em;
-        width: 100%;
+        width: calc(100% - 1em);
         background-color: white;
         padding: 0.5em;
-        box-shadow: 0 0 5px #888888; }
+        box-shadow: 0 0 5px #888888;
+        opacity: 1;
+        transition: opacity 200ms ease-in 100ms; }
+    .menu-plus-picture.open .my-picture-big img, .menu-plus-picture:active .my-picture-big img {
+      opacity: 0;
+      transition: opacity 100ms ease-in; }
   .my-picture-small, .my-picture-small img {
     display: none; }
   .popover {
@@ -144,7 +195,7 @@ About
   .menu-plus-picture {
     width: 15%; }
     .menu-plus-picture .my-picture-big img {
-      width: 115%; }
+      width: calc(115% - 1em); }
   .popover {
     right: 8em; } }
 
@@ -152,10 +203,14 @@ About
   .menu-plus-picture .my-picture-big img {
     max-width: 15em; } }
 
-.carousel .hobby-image {
-  position: relative; }
-
 /* animation for changing images in carousel */
+.carousel-animation-appear {
+  opacity: 0.01; }
+
+.carousel-animation-appear.carousel-animation-appear-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in; }
+
 .carousel-animation-enter {
   opacity: 0.01;
   z-index: 2;
@@ -185,7 +240,32 @@ About
 
 /* carousel */
 .carousel {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-top: 1.5em; }
+  @media (max-width: 767px) and (orientation: landscape) {
+    .carousel {
+      width: auto; }
+      .carousel .hobby-image img {
+        max-height: 85vh; } }
+  .carousel .hobby-image {
+    position: relative;
+    text-align: center;
+    padding: 0.5em;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #888888; }
+    .carousel .hobby-image p {
+      margin: 0.5em 0; }
+    .carousel .hobby-image img {
+      max-width: 100%;
+      vertical-align: middle; }
+    @media (max-width: 400px) {
+      .carousel .hobby-image {
+        padding: .5em 0 .1em 0;
+        margin-top: 0.5em; }
+        .carousel .hobby-image .carousel-slide {
+          margin-bottom: -.1em; } }
   .carousel-slide {
     margin-bottom: -.1em; }
   .carousel-control {
@@ -205,6 +285,8 @@ About
       display: inline-block;
       width: 2vw;
       height: 2vw;
+      min-width: 1.27273em;
+      min-height: 1.27273em;
       position: relative;
       box-sizing: border-box;
       opacity: 0.65;

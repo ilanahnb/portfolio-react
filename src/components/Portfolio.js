@@ -21,6 +21,10 @@ export class Portfolio extends Component {
 					<div className="content">
 						<h1>Portfolio</h1>
 
+						<blockquote>
+							The latest websites I've built.
+						</blockquote>
+
 						<h2>Purrcipes</h2>
 
 						<h3>
@@ -32,7 +36,7 @@ export class Portfolio extends Component {
 
 						<p><a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a></p>
 
-						<p>Responsive web app built with <mark>MeteorJS</mark> and integrated with <mark>MongoDB</mark> and Dropbox.</p>
+						<p>Purrcipes is a responsive web app built with <mark>MeteorJS</mark> and integrated with <mark>MongoDB</mark> and Dropbox. On Purrcipes you can login, add your own recipes, save recipes from other users as your favourites, comment and vote. And all this with a cat theme!</p>
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, jQuery, Meteor, Node, MongoDB, Bootstrap, LESS, RESTful API.</small></p>
 
@@ -48,7 +52,7 @@ export class Portfolio extends Component {
 							</a>
 						</h3>
 
-						<p>Single page web app built with <mark>ReactJS</mark>.</p>
+						<p>Single page website built with <mark>ReactJS</mark>.</p>
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, React, SASS.</small></p>
 

@@ -10,20 +10,17 @@ Menu
     opacity: 0.01; }
     .menu-enter.menu-enter-active {
       opacity: 1;
-      -webkit-transition: opacity 200ms ease-in;
-      -moz-transition: opacity 200ms ease-in;
-      transition: opacity 200ms ease-in; }
+      transition: opacity 300ms ease-in; }
       @media (max-width: 767px) {
         .menu-enter.menu-enter-active {
-          -webkit-transition: opacity 200ms ease-in 100ms;
-          -moz-transition: opacity 200ms ease-in 100ms;
-          transition: opacity 200ms ease-in 100ms; } }
+          -webkit-transition-delay: 100ms;
+          transition-delay: 100ms;
+          -webkit-transition: opacity 300ms ease-in 100ms;
+          transition: opacity 300ms ease-in 100ms; } }
   .menu-leave {
     opacity: 1; }
     .menu-leave.menu-leave-active {
       opacity: 0.01;
-      -webkit-transition: opacity 100ms ease-in;
-      -moz-transition: opacity 100ms ease-in;
       transition: opacity 100ms ease-in; }
   .menu .menu-layer {
     background-color: transparent;
@@ -40,8 +37,6 @@ Menu
       margin: 6px 0;
       vertical-align: sub;
       background-color: #303030;
-      -webkit-transition: background 0s 0.3s;
-      -moz-transition: background 0s 0.3s;
       transition: background 0s 0.3s; }
       .menu .menu-layer .lines:before, .menu .menu-layer .lines:after {
         position: absolute;
@@ -52,21 +47,13 @@ Menu
         border-radius: 1px;
         background-color: #303030;
         content: "";
-        -webkit-transition-duration: 0.3s, 0.3s;
-        -moz-transition-duration: 0.3s, 0.3s;
-        -webkit-transition-delay: 0.3s, 0s;
-        -moz-transition-delay: 0.3s, 0s;
         transition-duration: 0.3s, 0.3s;
         transition-delay: 0.3s, 0s; }
       .menu .menu-layer .lines:before {
         top: -8px;
-        -webkit-transition-property: top, transform;
-        -moz-transition-property: top, transform;
         transition-property: top, transform; }
       .menu .menu-layer .lines:after {
         bottom: -8px;
-        -webkit-transition-property: bottom, transform;
-        -moz-transition-property: bottom, transform;
         transition-property: bottom, transform; }
   .menu ul.sidebar-nav {
     list-style-type: none;
@@ -79,8 +66,6 @@ Menu
       .menu ul.sidebar-nav li .sidebar-nav-item {
         color: #303030;
         border-bottom: none;
-        -webkit-transition: all 0.3s;
-        -moz-transition: all 0.3s;
         transition: all 0.3s; }
         .menu ul.sidebar-nav li .sidebar-nav-item span {
           display: inline-block;
@@ -90,8 +75,6 @@ Menu
           border-radius: 1px;
           vertical-align: middle;
           background-color: #303030;
-          -webkit-transition: width 0.3s 0s;
-          -moz-transition: width 0.3s 0s;
           transition: width 0.3s 0s; }
         .menu ul.sidebar-nav li .sidebar-nav-item:hover span {
           width: 25px; }
@@ -114,38 +97,29 @@ Menu
       height: 4em;
       margin: 0 auto;
       text-align: center;
-      -webkit-transform-origin: center center;
-      -ms-transform-origin: center center;
       transform-origin: center center;
       z-index: -1; }
       .menu .menu-layer .rotated-background {
         background-color: #1db7a9;
+        box-shadow: 0 0 5px #888888;
+        position: absolute;
+        z-index: -1;
         width: 32px;
         height: 32px;
-        box-shadow: 0 0 5px #888888;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        transform: rotate(45deg);
-        position: absolute;
-        top: 0;
+        top: 2em;
         left: 0;
-        z-index: -1;
-        -webkit-transform-origin: left bottom;
-        -ms-transform-origin: left bottom;
-        transform-origin: left bottom;
-        -webkit-transition: all 200ms ease-in-out;
-        -moz-transition: all 200ms ease-in-out;
-        transition: all 200ms ease-in-out; }
-        .menu .menu-layer .rotated-background.active {
-          top: 0.6em;
-          width: 150px;
-          height: 210px;
-          -moz-transform: rotate(0deg);
-          transform: rotate(0deg);
-          -webkit-transition: all 200ms ease-in-out;
-          -moz-transition: all 200ms ease-in-out;
-          transition: all 200ms ease-in-out; }
+        transform: rotate(-45deg) scale(1);
+        transform-origin: left top;
+        transition: all 300ms;
+        -webkit-transition: all 300ms;
+        -moz-transition: all 300ms; }
+        .menu .menu-layer .rotated-background.active, .menu .menu-layer .rotated-background:active {
+          top: 0.8em;
+          transform: rotate(0deg) scaleX(4.7) scaleY(6.6);
+          transform-origin: left top;
+          transition: all 300ms;
+          -webkit-transition: all 300ms;
+          -moz-transition: all 300ms; }
       .menu .menu-layer .lines {
         position: relative;
         display: inline-block;
@@ -154,8 +128,6 @@ Menu
         height: 2px;
         left: 0;
         top: 1.45em;
-        -webkit-transform-origin: center center;
-        -ms-transform-origin: center center;
         transform-origin: center center;
         background-color: #303030;
         border-radius: 1px; }

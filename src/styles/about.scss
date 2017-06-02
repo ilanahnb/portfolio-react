@@ -17,6 +17,89 @@ About
 	}
 }
 
+.content {
+
+	.intro-title {
+		color: $color-green;
+		letter-spacing: 0.15em;
+	}
+
+	blockquote {
+	    font-size: 1.125em; /* 18px */
+	    line-height: 26px;
+	    padding: 0;
+	    margin: 20px 0;
+
+		@media (min-width: 401px) {
+			font-size: 1.25em; /* 20px */
+	    	line-height: 28px;
+			margin: 24px;
+		}
+	}
+
+	.about-text {
+		text-indent: 1.5em;
+		margin-top: 2em;
+
+		.indented-text {
+    		padding: 0 1.2em;
+		    border-right: 0.2em solid $color-light-green;
+		    border-left: 0.2em solid $color-light-green;
+
+		    @media (min-width: 401px) {
+			    border-right-width: 0.3em;
+    			border-left-width: 0.3em;
+			}
+		}
+	}
+
+	.read-more {
+		&-enter {
+	    	opacity: 0.01;
+
+	        &.read-more-enter-active {
+	        	opacity: 1;
+	            -webkit-transition: all 500ms ease-in-out;
+	            transition: all 500ms ease-in-out;
+	        }
+	    }
+
+	    &-leave {
+	    	opacity: 1;
+
+	        &.read-more-leave-active {
+	    		opacity: 0.01;
+	            -webkit-transition: all 500ms ease-in-out;
+	            transition: all 500ms ease-in-out;
+	        }
+	    }
+	}
+
+	.button-centered {
+		text-align: center;
+		margin-top: 1.5em;
+	}
+
+	.button-read {
+		color: white;
+		background-color: $color-green;
+		font-size: 0.9em;
+	    padding: 8px;
+		border: 1px solid $color-green;
+		margin-bottom: 15px;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&-less {
+			background-color: transparent;
+			color: $color-green;
+		}
+	}
+}
+
+
 .popover {
     position: absolute;
     display: block;
@@ -87,6 +170,7 @@ About
 
 .hobby-wrap {
 	margin: 0 -5px;
+	text-align: center;
 
 	.hobby-item {
 		display: inline-block;
@@ -96,7 +180,6 @@ About
 		background: none;
 		cursor: pointer;
 		font: inherit;
-		text-align: center;
 		padding: 5px;
 		margin: 0.5em 0;
 		border: 0;
@@ -108,7 +191,7 @@ About
 		}
 
 		.text {
-			padding-top: 0.5em;
+			padding-top: 10px;
 		}
 
 		&:hover {
@@ -122,6 +205,14 @@ About
 				font-weight: bold;
 				color: $color-green;
 				border-bottom: dotted 1px $color-green;
+			}
+		}
+	}
+
+	@media (max-width: 900px) {
+		.hobby-item {
+			img {
+				max-width: 40px;
 			}
 		}
 	}
@@ -147,68 +238,53 @@ About
 			}
 
 			.text {
-				padding-top: 0.2em;
-				font-size: .95em;
+				padding-top: 5px;
 			}
 		}
 	}
 }
 
-.hobby-image {
-	text-align: center;
-	padding: 0.5em;
-	margin-top: 1.5em;
-	box-sizing: border-box;
-	box-shadow: 0 0 5px #888888;
-
-	p {
-		margin: 0.5em 0;
-	}
-
-	img {
-		max-width: 100%;
-		vertical-align: middle;
-	}
-
-	@media (max-width: 400px) {
-		padding: .5em 0 .1em 0;
-		margin-top: 0.5em;
-
-		.carousel-slide {
-			margin-bottom: -.1em;
-		}
-	}
-}
-
-
 
 @media (min-width: 768px) {
 
-	.menu-plus-picture {
+	.menu {
 		position: fixed;
 		top: 0;
+		margin-top: 1em;
+		margin-left: 1em;
+	}
+
+	.menu-plus-picture {
 		width: 20%;
 		z-index: 1;
 
-		.menu {
-			position: initial;
-			margin-top: 1em;
-			margin-left: 1em;
-		}
-
 		.my-picture-big {
 			display: inherit;
+			position: absolute;
+		    top: 2em;
+		    left: -1em;
+		    z-index: -1;
 
 			img {
 				display: inherit;
-				position: relative;
 				width: 100%;
 				margin-top: 3em;
 				margin-left: 2em;
-				width: 100%;
+				width: calc(100% - 1em);
 				background-color: white;
 				padding: 0.5em;
 				box-shadow: 0 0 5px #888888;
+				opacity: 1;
+				transition: opacity 200ms ease-in 100ms;
+			}
+		}
+
+		&.open, &:active {
+			.my-picture-big {
+				img {
+					opacity: 0;
+					transition: opacity 100ms ease-in;
+				}
 			}
 		}
 	}
@@ -230,7 +306,7 @@ About
 		width: 15%;
 
 		.my-picture-big img {
-			width: 115%;
+			width: calc(115% - 1em);
 		}
 	}
 
@@ -250,11 +326,16 @@ About
 
 
 
-.carousel .hobby-image {
-	position: relative;
+/* animation for changing images in carousel */
+.carousel-animation-appear {
+ 	opacity: 0.01;
 }
 
-/* animation for changing images in carousel */
+.carousel-animation-appear.carousel-animation-appear-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+}
+
 .carousel-animation-enter {
  	opacity: 0.01;
  	z-index: 2;
@@ -291,6 +372,43 @@ About
 /* carousel */
 .carousel {
 	position: relative;
+	display: inline-block;
+	width: 100%;
+	margin-top: 1.5em;
+
+	@media (max-width: 767px) and (orientation: landscape) {
+		width: auto;
+
+		.hobby-image img {
+			max-height: 85vh;
+		}
+	}
+
+	.hobby-image {
+		position: relative;
+		text-align: center;
+		padding: 0.5em;
+		box-sizing: border-box;
+		box-shadow: 0 0 5px #888888;
+
+		p {
+			margin: 0.5em 0;
+		}
+
+		img {
+			max-width: 100%;
+			vertical-align: middle;
+		}
+
+		@media (max-width: 400px) {
+			padding: .5em 0 .1em 0;
+			margin-top: 0.5em;
+
+			.carousel-slide {
+				margin-bottom: -.1em;
+			}
+		}
+	}
 
 	&-slide {
 		margin-bottom: -.1em;
@@ -314,6 +432,8 @@ About
 			display: inline-block;
 			width: 2vw;
 			height: 2vw;
+			min-width: 1.27273em;
+    		min-height: 1.27273em;
 			position: relative;
 			box-sizing: border-box;
 			opacity: 0.65;

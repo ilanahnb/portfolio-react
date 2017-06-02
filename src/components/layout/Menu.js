@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
+import { Image } from './Image';
 
 
 export class Menu extends Component {
@@ -23,9 +24,11 @@ export class Menu extends Component {
 
 	render() {
 
-		let menu;
+		let menu, active, menuIsOpen, menuPlusPicture;
 
 		if(this.state.menuActive) {
+			active = "rotated-background active";
+			menuIsOpen = "menu open";
 			menu = <ul className="sidebar-nav">
 				<li>
 					<NavLink exact to="/" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
@@ -49,32 +52,39 @@ export class Menu extends Component {
 				</li>
 			</ul>
 		} else {
+			active = "rotated-background";
+			menuIsOpen = "menu";
 			menu = "";
 		}
 
-		let active;
-		
-		if (this.state.menuActive) {
-			active = "rotated-background active";
+		if(location.pathname === "/about") {
+			menuPlusPicture = " menu-plus-picture";
 		} else {
-			active = "rotated-background";
+			menuPlusPicture = "";
 		}
 
+		menuIsOpen += menuPlusPicture;
+
 	    return (
-			<nav className="menu">
+				<nav className={menuIsOpen}>
+						<div className="menu-layer" onClick={this.toggleMenu}>
+							<div className={active}></div>
+						    <span className="lines"></span>
+						</div>
 
-				<div className="menu-layer" onClick={this.toggleMenu}>
-					<div className={active}></div>
-				    <span className="lines"></span>
-				</div>
+						<CSSTransitionGroup
+							transitionName="menu"
+							transitionEnterTimeout={300}
+							transitionLeaveTimeout={100}>
+							{menu}
+						</CSSTransitionGroup>
 
-				<CSSTransitionGroup
-					transitionName="menu"
-					transitionEnterTimeout={200}
-					transitionLeaveTimeout={100}>
-					{menu}
-				</CSSTransitionGroup>
-			</nav>
+						{
+		                    (location.pathname === "/about") ? 
+		                    <Image src="/ilana-big.jpeg" alt="Ilana's avatar" class="my-picture-big" />
+		                    : null
+		                }
+				</nav>
 	    );
  	}
 }

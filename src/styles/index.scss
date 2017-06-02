@@ -15,12 +15,13 @@
 }
 
 @font-face {
-  font-family: 'Dancing Script';
+  font-family: 'Sniglet';
   font-style: normal;
-  font-weight: 700;
-  src: local('Dancing Script'),
-       url('/Dancing Script 700.ttf') format('truetype'),
+  font-weight: normal;
+  src: local('Sniglet'),
+       url('/Sniglet-Regular.ttf') format('truetype'),
 }
+
 
 @import "./globals.scss";
 @import "./base.scss";

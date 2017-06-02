@@ -9,7 +9,8 @@ export class Carousel extends Component {
 		this.state = {
 			items: this.props.carousel, 
 			current: 0, 
-			isNext: true 
+			isNext: true,
+			name: this.props.name
 		};
 
 		this.handlerPrev = this.handlerPrev.bind(this);
@@ -22,7 +23,9 @@ export class Carousel extends Component {
 		if (this.props.carousel !== nextProps.carousel) {
 			this.setState({
 				items: this.props.carousel,
-				current: 0
+				current: 0,
+				isNext: true,
+				name: this.props.name
 			});
 		}
 	}
@@ -71,37 +74,48 @@ export class Carousel extends Component {
 	render() {
 
 		let index = this.state.current,
+			name = this.state.name + index,
 	        src = this.state.items[index].imagesrc,
 	        text = this.state.items[index].imagetext;
 
 		return (
-			<div className="hobby-wrap carousel">
-				<div className="hobby-image">
-					<CSSTransitionGroup
-						transitionName="carousel-animation"
-						transitionEnterTimeout={500}
-	        			transitionLeaveTimeout={500}>
-						<div className="carousel-slide" key={index}>
-								<p>{text}</p>
-								<Image src={src} alt="Hobby" class="hobby-img" />
+			<div className="hobby-wrap">
+
+				<div className="carousel">
+
+						<div className="hobby-image">
+
+							<CSSTransitionGroup
+								transitionName="carousel-animation"
+								transitionAppear={true}
+			 					transitionAppearTimeout={500}
+								transitionEnterTimeout={500}
+			        			transitionLeaveTimeout={500}>
+
+								<div className="carousel-slide" key={name}>
+									<p>{text}</p>
+									<Image src={src} alt="Hobby" class="hobby-img" />
+								</div>
+
+							</CSSTransitionGroup>
+
 						</div>
-					</CSSTransitionGroup>
+
+					{this.state.items.length === 1 ? null :
+						<div>
+							<button className="carousel-control carousel-control-prev" onClick={this.handlerPrev}><span></span></button>
+							<button className="carousel-control carousel-control-next" onClick={this.handlerNext}><span></span></button>
+
+							<div className="carousel-history">
+								<History 
+									current={this.state.current} 
+									items={this.state.items}
+									changeSlide={this.goToHistoryClick}
+								/>
+							</div>
+						</div>
+					}
 				</div>
-
-				{this.state.items.length === 1 ? null :
-					<div>
-					<button className="carousel-control carousel-control-prev" onClick={this.handlerPrev}><span></span></button>
-					<button className="carousel-control carousel-control-next" onClick={this.handlerNext}><span></span></button>
-
-					<div className="carousel-history">
-						<History 
-							current={this.state.current} 
-							items={this.state.items}
-							changeSilde={this.goToHistoryClick}
-						/>
-					</div>
-					</div>
-				}
 			</div>
 		);
 	}
@@ -119,14 +133,16 @@ class History extends React.Component {
 			return (
 				<li key={index}>
 					<button className={name} 
-						onClick={ () => this.props.changeSilde(current, index) }>
+						onClick={ () => this.props.changeSlide(current, index) }>
 					</button>
 				</li>
 			)
 		});
 
 		return (
-			<ul>{items}</ul>
+			<ul>
+				{items}
+			</ul>
 		)
 	}
 }

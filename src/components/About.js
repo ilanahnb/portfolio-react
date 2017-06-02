@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Image } from './layout/Image';
 import { Carousel } from './Carousel';
 import { ScrollToTopOnMount } from './layout/Scroll';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 
 
@@ -67,7 +68,7 @@ const hobbies = [
 				imagetext: 'Drawing.'
 			},
 			{
-				imagesrc: '/hobby-draw2.jpg',
+				imagesrc: '/hobby-draw2.jpeg',
 				imagetext: 'Indoor climbing.'
 			}
 		]
@@ -78,11 +79,11 @@ const hobbies = [
 		name: 'familyfriends',
 		images: [
 			{
-				imagesrc: '/hobby-familyfriends.jpg',
+				imagesrc: '/hobby-familyfriends1.jpg',
 				imagetext: 'My husband and I ♥'
 			},
 			{
-				imagesrc: '/hobby-familyfriends2.jpg',
+				imagesrc: '/hobby-familyfriends4.jpg',
 				imagetext: 'Overkilled! At my sister\'s Halloween Party.'
 			},
 			{
@@ -173,8 +174,27 @@ export class About extends Component {
 			imagesrc: '',
 			imagetext: '',
 			imageStatus: 'loading',
-			carousel: ''
+			carousel: '',
+			readMore: 0
 		};
+	}
+
+	readMoreClick() {
+		let readMore = this.state.readMore;
+		readMore ++;
+
+		this.setState({
+			readMore: readMore
+		});
+	}
+
+	readLessClick() {
+		let readMore = this.state.readMore;
+		readMore --;
+		
+		this.setState({
+			readMore: readMore
+		});
 	}
 
 	openPopover() {
@@ -207,6 +227,86 @@ export class About extends Component {
 
 	render() {
 
+		let about, readMore;
+
+		readMore = this.state.readMore;
+
+		if(this.state.readMore === 2) {
+			about = <div className="about-text" key={readMore}>
+						<p>
+							I’ve always been a creative person that likes mental challenges.
+						</p>
+						<p>
+							I’m a Master of Science in Agricultural and Environmental Microbiology and was a biotechnology researcher in Brazil. But in 2014 something happened that changed my life completely and forever... I developed my first website and fell in love by front-end development!
+						</p>
+						<p>
+							What can I say? Design and programming are so interesting and challenging. I got thrilled by all the possibilities! Since then I’m in constant improvement, always hungry for more. I’m a self-taught person and most of the things I’ve learned were by reading documentation, watching online videos, hacking and writting code. What fascinates me the most are responsive design and JavaScript programming.
+						</p>
+
+						<div className="indented-text">
+							<p>
+								In <b>2015</b> I started working at <a href="http://www.fareoffice.com/" target="_blank">Fareoffice</a>, a Swedish tech company owned by Enterprise Holdings, the largest car rental company in the world as measured by revenue, fleet and employees. At Fareoffice we create car rental solutions for the Enterprise Rent-A-Car, National Car Rental and Alamo Rent A Car brands. There I've been working for over 2 years as Project Manager and Web Content Manager. I grew quickly in the company and became a stakeholder for different products. This experience was very gratifying and I am grateful to have had the chance to work in this motivating company with great people.
+							</p>
+							<p>
+								I enjoy studying and have great interest in learning new technologies. I spent several hours studying by myself to learn more about the amazing world of coding. In <b>2016</b> I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a> using MeteorJS and MongoDB. This year I am working on my programming skills and my project is to master React.
+							</p>
+
+							<p>
+								<b>My goal</b> is to become an inspiring developer! I aim to improve everyday.
+							</p>
+						</div>
+
+						<p>
+							I'm currently <mark>available for work</mark> and seeking an opportunity to work in a company where I can feel helpful, apply my creativity and learn from more experienced developers. If you are the one that can offer me this opportunity, please feel free to <Link to="/contact">contact me</Link>!
+						</p>
+						<p>
+							I have a <mark>permanent visa to work in Australia</mark> and will move to <mark>Sydney</mark> in August.
+						</p>
+
+						<div className="button-centered">
+							<button className="button-read button-read-less" onClick={() => { this.readLessClick() }}>
+								Show less...
+							</button>
+						</div>
+					</div>
+		} else if(this.state.readMore === 1) {
+			about = <div className="about-text" key={readMore}>
+						<p>
+							I’ve always been a creative person that likes mental challenges.
+						</p>
+						<p>
+							I’m a Master of Science in Agricultural and Environmental Microbiology and was a biotechnology researcher in Brazil. But in 2014 something happened that changed my life completely and forever... I developed my first website and fell in love by front-end development!
+						</p>
+						<p>
+							What can I say? Design and programming are so interesting and challenging. I got thrilled by all the possibilities! Since then I’m in constant improvement, always hungry for more. I’m a self-taught person and most of the things I’ve learned were by reading documentation, watching online videos, hacking and writting code. What fascinates me the most are responsive design and JavaScript programming.
+						</p>
+						<p>
+							I'm currently <mark>available for work</mark> and seeking an opportunity to work in a company where I can feel helpful, apply my creativity and learn from more experienced developers. If you are the one that can offer me this opportunity, please feel free to <Link to="/contact">contact me</Link>!
+						</p>
+						<p>
+							I have a <mark>permanent visa to work in Australia</mark> and will move to <mark>Sydney</mark> in August.
+						</p>
+
+						<div className="button-centered">
+							<button className="button-read button-read-less" onClick={() => { this.readLessClick() }}>
+								Hide...
+							</button>
+
+							<small> or </small>
+
+							<button className="button-read" onClick={() => { this.readMoreClick() }}>
+								Read even more!
+							</button>
+						</div>
+					</div>
+		} else {
+			about = <div className="button-centered" key={readMore}>
+						<button className="button-read" onClick={() => { this.readMoreClick() }}>
+							Read more!
+						</button>
+					</div>;
+		}
+
 		const Button = ({icon, text, name, images}) => (
 			<button className={this.state.activebutton === name ? 'hobby-item active' : 'hobby-item'}
 					onClick={() => {
@@ -234,10 +334,7 @@ export class About extends Component {
 
 				<ScrollToTopOnMount/>
 
-				<div className="menu-plus-picture">
-					<Menu />
-					<Image src="/ilana-big.jpeg" alt="Ilana's avatar" class="my-picture-big" />
-				</div>
+				<Menu />
 
 				<div className="container">
 				
@@ -247,32 +344,21 @@ export class About extends Component {
 
 					<div className="content">
 
-						<h1>About me</h1>
+						<h1>Hello!</h1>
 
-						<p>
-							I am a Brazilian self-taught <mark>Front End Developer</mark> living in <mark>Sydney, Australia</mark>. Responsive web design and JavaScript programming are my passions.
-						</p>
-						<p>
-							My first contact with HTML and CSS was in <b>2014</b>. Since then I fell in love with front-end development and got thrilled by all the possibilities and opportunities.
-						</p>
-						<p>
-							In <b>2015</b> I started working at Fareoffice, a market leader in e-commerce solutions for the car rental industry. There I worked for over 2 years as Project Manager and Web Content Manager. I grew quickly in the company and became a stakeholder for different products. I was able to help to deliver the new websites within the deadlines, daily reporting to other stakeholders and ensuring quality.
-						</p>
-						<p>
-							I spent several hours of my free time studying by myself to learn more about the amazing world of coding. In <b>2016</b> I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a> using MeteorJS and MongoDB.
-						</p>
-						<p>
-							<b>My goal</b> is to become an awesome and inspiring developer!
-						</p>
-						<p>
-							I enjoy studying and have great interest in learning new technologies. I am currently <mark>available for work</mark> and seeking an opportunity to work in a company where I can feel helpful, apply my creativity and learn from more experienced developers.
-						</p>
-						<p>
-							If you are the one that can offer me this opportunity, please feel free to <Link to="/contact">contact me</Link>!
-						</p>
+						<blockquote>
+							I'm Ilana, a front-end developer, Brazilian, former biotechnology researcher, nerd, climber and a cat person.
+						</blockquote>
+
+						<CSSTransitionGroup
+							transitionName="read-more"
+							transitionEnterTimeout={500}
+							transitionLeaveTimeout={500}>
+							{about}
+						</CSSTransitionGroup>
 
 
-						<h2>Skills</h2>
+						<h2>My skills</h2>
 
 						<div className="row">
 							<div className="col-6">
@@ -509,13 +595,13 @@ export class About extends Component {
 						</div>
 
 
-						<h2>Passions & Hobbies</h2>
+						<h2>My passions</h2>
 
 						<Buttons hobbies={hobbies} />
 
 						{
 							this.state.activebutton ? 
-							<Carousel carousel={this.state.carousel} />
+							<Carousel carousel={this.state.carousel} name={this.state.activebutton} />
 							: null
 						}
 
