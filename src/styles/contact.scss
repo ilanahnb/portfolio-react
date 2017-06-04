@@ -10,17 +10,22 @@ Contact
 	ul {
 		list-style: none;
 		padding: 0;
-    	margin-top: 24px;
 
 		li {
 			display: inline-block;
-			margin-right: 15px;
-		}
-	}
+			margin-right: 8px;
 
-	img {
-		max-width: 35px;
-		max-height: 35px;
+			a {
+				.svg-icon {
+					font-size: 40px;
+					margin-right: 0;
+				}
+
+				&:hover {
+					border-bottom: none;
+				}
+			}
+		}
 	}
 }
 

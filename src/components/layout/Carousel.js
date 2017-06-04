@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Image } from './layout/Image';
+import { Image } from './Image';
 import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 

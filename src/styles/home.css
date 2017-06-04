@@ -7,6 +7,11 @@ Homepage
   .home .masthead {
     background-color: transparent;
     text-align: center; }
+    .home .masthead-title {
+      color: #303030;
+      font-size: 1.375em;
+      font-family: 'Josefin Slab', serif;
+      margin-top: 1em; }
   .home .img-container {
     position: absolute;
     top: 0;
@@ -72,9 +77,9 @@ Homepage
       font-size: 1.3em;
       font-weight: bold; }
       .home .footer-nav a.footer-nav-item:hover, .home .footer-nav a.footer-nav-item:focus {
-        border-bottom: dotted 1px #303030; }
+        border-bottom: solid 2px #303030; }
   @media (min-width: 768px) {
     .home .footer-nav ul {
       margin-bottom: 40px; }
-    .home .masthead h3 {
+    .home .masthead-title {
       margin-top: 40px; } }

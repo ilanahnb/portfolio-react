@@ -13,6 +13,13 @@ Homepage
     .masthead {
     	background-color: transparent;
     	text-align: center;
+
+    	&-title{
+    		color: $text-color;
+    		font-size: 1.375em;
+    		font-family: 'Josefin Slab', serif;
+    		margin-top: 1em;
+    	}
     }
 
 	.img-container {
@@ -100,7 +107,7 @@ Homepage
 			font-weight: bold;
 
 			&:hover, &:focus {
-		      border-bottom: dotted 1px $text-color;
+		      border-bottom: solid 2px $text-color;
 		    }
 		}
 	}
@@ -110,7 +117,7 @@ Homepage
 			margin-bottom: 40px;
 		}
     	
-    	.masthead h3 {
+    	.masthead-title {
     		margin-top: 40px;
     	}
 	}

@@ -24,7 +24,7 @@ body {
  	font-family: 'Josefin Slab', serif;
 }
 
-h1, h2, blockquote, button.button-read {
+h1, h2, strong, button.button-read {
 	font-family: 'Sniglet', cursive;
 	text-align: center;
 }
@@ -47,6 +47,19 @@ h3 {
 	font-size: 1.375em;		/* 22px */
 }
 
+.hidden-heading, 
+.hidden-content, 
+.hidden-nav, 
+.hidden-button {
+	position: absolute;
+	text-indent: -9999px;
+	z-index: -9999;
+}
+
+.hidden-nav, .hidden-text {
+	display: none;
+}
+
 p {
     line-height: 24px;
 }
@@ -54,9 +67,10 @@ p {
 a {
 	text-decoration: none;
 	color: $color-green;
+	font-weight: bold;
 
 	&:hover {
-		border-bottom: dotted 1px $color-green;
+		border-bottom: solid 1px $color-green;
 	}
 }
 
@@ -64,14 +78,21 @@ small {
 	font-size: 13px;
 }
 
-mark {
+em {
 	background-color: $color-light-green;
 	color: $text-color;
+	font-style: normal;
 	padding: 2px 3px;
 }
 
-button:focus {
-	outline: none;
+:focus {
+	outline-color: $color-green;
+}
+
+.svg-icon {
+    font-size: 130%;
+    vertical-align: top !important;
+    margin-right: 8px;
 }
 
 

@@ -24,19 +24,6 @@ About
 		letter-spacing: 0.15em;
 	}
 
-	blockquote {
-	    font-size: 1.125em; /* 18px */
-	    line-height: 26px;
-	    padding: 0;
-	    margin: 20px 0;
-
-		@media (min-width: 401px) {
-			font-size: 1.25em; /* 20px */
-	    	line-height: 28px;
-			margin: 24px;
-		}
-	}
-
 	.about-text {
 		text-indent: 1.5em;
 		margin-top: 2em;
@@ -144,6 +131,7 @@ About
 			height: 0.8em;
 			width: 0.8em;
 			display: inline-block;
+			vertical-align: middle;
 			border-radius: 50%;
 			margin-left: 0.2em;
 		}
@@ -196,7 +184,7 @@ About
 
 		&:hover {
 			.text small {
-				border-bottom: dotted 1px $text-color;
+				border-bottom: solid 1px $text-color;
 			}
 		}
 
@@ -204,7 +192,17 @@ About
 			.text small {
 				font-weight: bold;
 				color: $color-green;
-				border-bottom: dotted 1px $color-green;
+				border-bottom: none;
+			}
+		}
+
+		&:focus {
+			-moz-outline: none;
+			outline: none;
+
+			.text small {
+				font-weight: bold;
+				border-bottom: solid 1px $text-color;
 			}
 		}
 	}
@@ -450,6 +448,15 @@ About
 			}
 		}
 
+		&:focus {
+			outline: none;
+			background-color: rgba(255,255,255, 0.2);
+
+			span {
+				opacity: 0.95;
+			}
+		}
+
 	    &.carousel-control-prev {
 	    	left: 0;
 	    	padding-left: 12px;
@@ -506,6 +513,11 @@ About
 					transition: background-color 300ms ease;
 
 					&.active {
+						background-color: rgba(255,255,255, 0.95);
+					}
+
+					&:focus {
+						transform: scale(1.1);
 						background-color: rgba(255,255,255, 0.95);
 					}
 				}

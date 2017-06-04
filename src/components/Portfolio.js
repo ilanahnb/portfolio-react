@@ -3,12 +3,22 @@ import { Menu } from './layout/Menu';
 import { Header } from './layout/Header';
 import { Image } from './layout/Image';
 import { ScrollToTopOnMount } from './layout/Scroll';
+import DocumentMeta from 'react-document-meta';
+import GithubIcon from 'react-icons/lib/fa/github-square';
+import ExternalLink from 'react-icons/lib/fa/external-link-square';
 
 
 export class Portfolio extends Component {
 	render() {
+		const meta = {
+			title: 'Portfolio | Ilana Boeira | Front End Developer',
+			description: 'Latest websites Ilana have built with links to her GitHub repositories and websites. Ilana Boeira is a front-end developer living in Sydney, Australia.'
+		};
+
 		return (
 			<div className="wrap">
+
+				<DocumentMeta {...meta} />
 
 				<ScrollToTopOnMount/>
 
@@ -21,42 +31,48 @@ export class Portfolio extends Component {
 					<div className="content">
 						<h1>Portfolio</h1>
 
-						<blockquote>
+						<strong>
 							The latest websites I've built.
-						</blockquote>
+						</strong>
+
 
 						<h2>Purrcipes</h2>
 
-						<h3>
-							<a href="https://github.com/ilanahnb/purrcipes" target="_blank">
-								<img src="/icon-github.png" alt="GitHub icon" className="github-icon" />
-								GitHub Repo 
+						<p className="portfolio-links">
+							<a href="https://github.com/ilanahnb/purrcipes" title="GitHub repository of Purrcipes" target="_blank">
+								<GithubIcon className="svg-icon" />
+								GitHub Repository
 							</a>
-						</h3>
+						</p>
 
-						<p><a href="http://www.purrcipes.com/" target="_blank">http://www.purrcipes.com/</a></p>
+						<p className="portfolio-links">
+							<a href="http://www.purrcipes.com/" title="Purrcipes website" target="_blank">
+								<ExternalLink className="svg-icon" />
+								www.purrcipes.com
+							</a>
+						</p>
 
-						<p>Purrcipes is a responsive web app built with <mark>MeteorJS</mark> and integrated with <mark>MongoDB</mark> and Dropbox. On Purrcipes you can login, add your own recipes, save recipes from other users as your favourites, comment and vote. And all this with a cat theme!</p>
+						<p>Purrcipes is a responsive web app built with <em>MeteorJS</em> and integrated with <em>MongoDB</em> and Dropbox. On Purrcipes you can login, add your own recipes, save recipes from other users as your favourites, comment and vote. And all this with a cat theme!</p>
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, jQuery, Meteor, Node, MongoDB, Bootstrap, LESS, RESTful API.</small></p>
 
-						<Image src="/screens-purrcipes.jpeg" alt="Purrcipes screens" class="screens" />
-
+						<Image src="/screens-purrcipes.jpeg" alt="Purrcipes on different screen sizes" class="screens" />
+						
 
 						<h2>My Portfolio</h2>
 
-						<h3>
-							<a href="https://github.com/ilanahnb/portfolio-react" target="_blank">
-								<img src="/icon-github.png" alt="GitHub icon" className="github-icon" />
-								GitHub Repo 
+						<p className="portfolio-links">
+							<a href="https://github.com/ilanahnb/portfolio-react" title="GitHub Repository of Ilana's Portfolio" target="_blank">
+								<GithubIcon className="svg-icon" />
+								GitHub Repository 
 							</a>
-						</h3>
+						</p>
 
-						<p>Single page website built with <mark>ReactJS</mark>.</p>
+						<p>Single page website built with <em>ReactJS</em>.</p>
 
 						<p><small><b>Keywords:</b> HTML5, CSS3, JavaScript, React, SASS.</small></p>
 
-						<Image src="/screens-portfolio.jpeg" alt="Portfolio screens" class="screens" />
+						<Image src="/screens-portfolio.jpeg" alt="Portfolio on different screen sizes" class="screens" />
 
 					</div>
 				</div>

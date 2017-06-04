@@ -1,9 +1,8 @@
 @font-face {
   font-family: 'Josefin Slab';
   font-style: normal;
-  font-weight: 400;
-  src: local('Josefin Slab'),
-       url('/Josefin Slab regular.ttf') format('truetype'),
+  src: local('Josefin Slab regular'),
+       url('/JosefinSlab-regular.ttf') format('truetype'),
 }
 
 @font-face {
@@ -11,7 +10,7 @@
   font-style: normal;
   font-weight: 700;
   src: local('Josefin Slab 700'),
-       url('/Josefin Slab 700.ttf') format('truetype'),
+       url('/JosefinSlab-700.ttf') format('truetype'),
 }
 
 @font-face {
@@ -19,7 +18,7 @@
   font-style: normal;
   font-weight: normal;
   src: local('Sniglet'),
-       url('/Sniglet-Regular.ttf') format('truetype'),
+       url('/Sniglet-regular.ttf') format('truetype'),
 }
 
 

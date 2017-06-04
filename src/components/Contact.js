@@ -1,53 +1,76 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Menu } from './layout/Menu';
 import { Header } from './layout/Header';
 import { ScrollToTopOnMount } from './layout/Scroll';
+import DocumentMeta from 'react-document-meta';
+import GithubIcon from 'react-icons/lib/fa/github-square';
+import LinkedinIcon from 'react-icons/lib/fa/linkedin-square';
+import EmailIcon from 'react-icons/lib/fa/envelope-square';
 
 
-export const Contact = () =>  (
-	<div>
+export class Contact extends Component {
+	render() {
+		const meta = {
+			title: 'Contact | Ilana Boeira | Front End Developer',
+			description: 'Contact Ilana Boeira. Ilana Boeira is a Brazilian front-end developer living in Sydney, Australia.'
+		};
 
-		<ScrollToTopOnMount/>
-	
-		<div className="wrap">
-			<Menu />
-		</div>
+		return (
+			<div>
 
-		<div className="full-height-div">
+				<DocumentMeta {...meta} />
 
-			<div className="container">
+				<ScrollToTopOnMount/>
+			
+				<div className="wrap">
+					<Menu />
+				</div>
 
-				<div className="white-box"></div>
-							
-				<Header />
+				<div className="full-height-div">
 
-				<div className="content">
-					<h1>Contact</h1>
+					<div className="container">
 
-					<p>
-						If you are interested in working with me to create awesome user interfaces or just knowing me better, then please get in touch!
-					</p>
+						<div className="white-box"></div>
+									
+						<Header />
 
-					<p>
-						<a href="mailto:ilana@ilanaboeira.com">ilana@ilanaboeira.com</a>
-					</p>
+						<div className="content">
+							<h1>Contact</h1>
 
-					<div className="social-nav">
-						<ul>
-							<li>
-								<a target="_blank" href="https://github.com/ilanahnb?tab=repositories" type="text/html">
-									<img src="/icon-github.png" alt="GitHub icon" />
-								</a>
-							</li>
-							<li>
-								<a target="_blank" href="https://www.linkedin.com/in/ilanaboeira/" type="text/html">
-									<img src="/icon-linkedin.png" alt="LinkedIn icon" />
-								</a>
-							</li>
-						</ul>
+							<p>
+								If you are interested in working with me to create awesome user interfaces or just knowing me better, then please get in touch!
+							</p>
+
+							<p>
+								<a href="mailto:ilana@ilanaboeira.com" title="Send an email to Ilana Boeira">ilana@ilanaboeira.com</a>
+							</p>
+
+							<div className="social-nav">
+								<ul>
+									<li>
+										<a href="mailto:ilana@ilanaboeira.com" title="Send an email to Ilana Boeira">
+											<EmailIcon className="svg-icon" />
+											<span className="hidden-text"> Send an email to Ilana Boeira</span>
+										</a>
+									</li>
+									<li>
+										<a target="_blank" title="GitHub repositories of Ilana Boeira" href="https://github.com/ilanahnb?tab=repositories" type="text/html">
+											<GithubIcon className="svg-icon" />
+											<span className="hidden-text"> GitHub repositories of Ilana Boeira</span>
+										</a>
+									</li>
+									<li>
+										<a target="_blank" title="LinkedIn account of Ilana Boeira" href="https://www.linkedin.com/in/ilanaboeira/" type="text/html">
+											<LinkedinIcon className="svg-icon" />
+											<span className="hidden-text"> LinkedIn account of Ilana Boeira</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-)
+		); 
+	}
+}

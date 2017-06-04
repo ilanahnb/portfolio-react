@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { ScrollToTopOnMount } from './layout/Scroll';
+import DocumentMeta from 'react-document-meta';
 
 
 export class Home extends Component {
@@ -17,6 +18,11 @@ export class Home extends Component {
 	}
 
 	render() {
+		const meta = {
+			title: 'Ilana Boeira | Front End Developer',
+			description: 'Ilana Boeira is a Brazilian front-end developer living in Sydney, Australia.'
+		};
+
 		const { loading } = this.state;
 
 		if(loading) {
@@ -28,23 +34,27 @@ export class Home extends Component {
 		return (
 			<div className="home">
 
+				<DocumentMeta {...meta} />
+
 				<ScrollToTopOnMount/>
 
 				<div className="masthead">
-					<h3 className="masthead-title">
+			    	<h1 className="hidden-heading">Ilana Boeira</h1>
+					<h2 className="masthead-title">
 						Front End Developer
-					</h3>
+					</h2>
 				</div>
 
 			    <div className="img-container">
-			        <img src="./logo.png" alt="logo" />
+			        <img src="./logo.png" alt="Ilana Boeira logo" />
 			    </div>
 
 				<nav className="footer-nav">
+					<h1 className="hidden-heading">Main Menu</h1>
 					<ul>
-						<li><Link to="/about" className="footer-nav-item">About</Link></li>
-						<li><Link to="/portfolio" className="footer-nav-item">Portfolio</Link></li>
-						<li><Link to="/contact" className="footer-nav-item">Contact</Link></li>
+						<li><Link to="/about" title="About" className="footer-nav-item">About</Link></li>
+						<li><Link to="/portfolio" title="Portfolio" className="footer-nav-item">Portfolio</Link></li>
+						<li><Link to="/contact" title="Contact" className="footer-nav-item">Contact</Link></li>
 					</ul>
 				</nav>
 			</div>

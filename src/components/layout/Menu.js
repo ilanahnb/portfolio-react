@@ -31,22 +31,22 @@ export class Menu extends Component {
 			menuIsOpen = "menu open";
 			menu = <ul className="sidebar-nav">
 				<li>
-					<NavLink exact to="/" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink exact to="/" title="Home page of Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
 						<span></span> Home
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/about" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/about" title="About Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
 						<span></span> About
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/portfolio" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/portfolio" title="Portfolio of Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
 						<span></span> Portfolio
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/contact" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/contact" title="Contact Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
 						<span></span> Contact
 					</NavLink>
 				</li>
@@ -67,23 +67,56 @@ export class Menu extends Component {
 
 	    return (
 				<nav className={menuIsOpen}>
-						<div className="menu-layer" onClick={this.toggleMenu}>
-							<div className={active}></div>
-						    <span className="lines"></span>
-						</div>
 
-						<CSSTransitionGroup
-							transitionName="menu"
-							transitionEnterTimeout={300}
-							transitionLeaveTimeout={100}>
-							{menu}
-						</CSSTransitionGroup>
+					<h1 className="hidden-heading">Main Menu</h1>
 
-						{
-		                    (location.pathname === "/about") ? 
-		                    <Image src="/ilana-big.jpeg" alt="Ilana's avatar" class="my-picture-big" />
-		                    : null
-		                }
+					<div className="menu-layer" onClick={this.toggleMenu}>
+						<a href="#" className="hidden-button" onFocus={this.toggleMenu}></a>
+						<div className={active}></div>
+					    <span className="lines"></span>
+					</div>
+
+					<CSSTransitionGroup
+						transitionName="menu"
+						transitionEnterTimeout={300}
+						transitionLeaveTimeout={100}>
+						{menu}
+					</CSSTransitionGroup>
+
+					{
+	                    !this.state.menuActive ? 
+	                    <nav className="hidden-nav">
+							<ul>
+								<li>
+									<NavLink exact to="/" title="Home page of Ilana Boeira">
+										Home
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to="/about" title="About Ilana Boeira">
+										About
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to="/portfolio" title="Portfolio of Ilana Boeira">
+										Portfolio
+									</NavLink>
+								</li>
+								<li>
+									<NavLink to="/contact" title="Contact Ilana Boeira">
+										Contact
+									</NavLink>
+								</li>
+							</ul>
+						</nav>
+	                    : null
+	                }
+
+					{
+	                    (location.pathname === "/about") ? 
+	                    <Image src="/ilana-big.jpeg" alt="Ilana's avatar" class="my-picture-big" />
+	                    : null
+	                }
 				</nav>
 	    );
  	}

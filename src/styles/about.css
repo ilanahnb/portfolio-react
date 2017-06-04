@@ -11,19 +11,6 @@ About
   color: #1db7a9;
   letter-spacing: 0.15em; }
 
-.content blockquote {
-  font-size: 1.125em;
-  /* 18px */
-  line-height: 26px;
-  padding: 0;
-  margin: 20px 0; }
-  @media (min-width: 401px) {
-    .content blockquote {
-      font-size: 1.25em;
-      /* 20px */
-      line-height: 28px;
-      margin: 24px; } }
-
 .content .about-text {
   text-indent: 1.5em;
   margin-top: 2em; }
@@ -101,6 +88,7 @@ About
       height: 0.8em;
       width: 0.8em;
       display: inline-block;
+      vertical-align: middle;
       border-radius: 50%;
       margin-left: 0.2em; }
     .skill-item .circle-full {
@@ -134,11 +122,17 @@ About
     .hobby-wrap .hobby-item .text {
       padding-top: 10px; }
     .hobby-wrap .hobby-item:hover .text small {
-      border-bottom: dotted 1px #303030; }
+      border-bottom: solid 1px #303030; }
     .hobby-wrap .hobby-item.active .text small {
       font-weight: bold;
       color: #1db7a9;
-      border-bottom: dotted 1px #1db7a9; }
+      border-bottom: none; }
+    .hobby-wrap .hobby-item:focus {
+      -moz-outline: none;
+      outline: none; }
+      .hobby-wrap .hobby-item:focus .text small {
+        font-weight: bold;
+        border-bottom: solid 1px #303030; }
   @media (max-width: 900px) {
     .hobby-wrap .hobby-item img {
       max-width: 40px; } }
@@ -297,6 +291,11 @@ About
       background-color: rgba(255, 255, 255, 0.2); }
       .carousel-control:hover span {
         opacity: 0.95; }
+    .carousel-control:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2); }
+      .carousel-control:focus span {
+        opacity: 0.95; }
     .carousel-control.carousel-control-prev {
       left: 0;
       padding-left: 12px; }
@@ -340,4 +339,7 @@ About
           cursor: pointer;
           transition: background-color 300ms ease; }
           .carousel-history ul li button.active {
+            background-color: rgba(255, 255, 255, 0.95); }
+          .carousel-history ul li button:focus {
+            transform: scale(1.1);
             background-color: rgba(255, 255, 255, 0.95); }

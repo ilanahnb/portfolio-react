@@ -4,7 +4,7 @@ Menu
 
 
 @import "./globals.scss";
- 
+
 
 .menu {
 	position: fixed;
@@ -33,6 +33,7 @@ Menu
 
         &.menu-leave-active {
             opacity: 0.01;
+            -webkit-transition: opacity 100ms ease-in;
             transition: opacity 100ms ease-in;
         }
     }
@@ -41,8 +42,14 @@ Menu
         background-color: transparent;
         text-align: left;
         border: none;
-        padding: 0;
-        cursor: pointer;        
+        padding: 5px;
+        cursor: pointer;
+
+        @media (min-width: 768px) {
+            &:focus {
+                outline-color: $color-dark-green;
+            }
+        }
 
         .lines {
             position: relative;
@@ -85,16 +92,27 @@ Menu
         list-style-type: none;
         padding-left: 1em;
         line-height: 1em;
+        width: 120px;
 
         li {
             font-weight: bold;
             font-family: 'Josefin Slab', serif;
-            margin: 2em 0 0;
+            margin: 8px 0 0;
+
+            &:first-child {
+                margin-top: 20px;
+            }
 
             .sidebar-nav-item {
+                display: block;
                 color: $text-color;
+                padding: 12px 0;
                 border-bottom: none;
-                transition: all 0.3s;
+                transition: all 300ms ease-in 100ms;
+
+                @media (min-width: 768px) {
+                    font-size: 1.1em;
+                }
 
                 span {
                     display: inline-block;
@@ -121,6 +139,13 @@ Menu
                         background-color: $color-light-green;
                     }
                 }
+
+                &:focus {
+                    outline: none;
+                    span {
+                        width: 25px;
+                    }
+                }
             }
         }
     }
@@ -135,25 +160,31 @@ Menu
 
         .menu-layer {
             position: fixed;
-            top: 1em;
-            left: 1em;
+            top: 33px;
+            left: 28px;
             display: block;
-            width: 45.5px;
-            height: 4em;
             margin: 0 auto;
             text-align: center;
             transform-origin: center center;
             z-index: -1;
 
+            &:focus {
+                outline: none;
+
+                .rotated-background {
+                    box-shadow: 0 0 3px $text-color;
+                }
+            }
+
             .rotated-background {
                 background-color: #1db7a9;
-                box-shadow: 0 0 5px #888888;
+                box-shadow: 0 0 3px #888888;
                 position: absolute;
                 z-index: -1;
                 width: 32px;
                 height: 32px;
-                top: 2em;
-                left: 0;
+                top: 14px;
+                left: -8px;
                 transform: rotate(-45deg) scale(1);
                 transform-origin: left top;
                 transition: all 300ms;
@@ -161,7 +192,7 @@ Menu
                 -moz-transition: all 300ms;
 
                 &.active, &:active {
-                    top: 0.8em;
+                    top: -5px;
                     transform: rotate(0deg) scaleX(4.7) scaleY(6.6);
                     transform-origin: left top;
                     transition: all 300ms;
@@ -177,7 +208,7 @@ Menu
                 width: 20px;
                 height: 2px;
                 left: 0;
-                top: 1.45em;
+                top: 0;
                 transform-origin: center center;
                 background-color: $text-color;
                 border-radius: 1px;
@@ -205,10 +236,10 @@ Menu
             z-index: 8;
 
             ul.sidebar-nav li {
-                margin: 1.5em 0;
+                margin: 0;
 
                 &:first-child {
-                    margin-top: 2.5em;
+                    margin-top: 30px;
                 }
 
                 .sidebar-nav-item span {

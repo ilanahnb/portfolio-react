@@ -50,21 +50,6 @@ Loading
 }
 
 
-@keyframes rotate {
-  0% { 
-    transform: rotate(0deg);
-  }
-  100% { 
-    transform: rotate(360deg);
-  }
-}
-
-svg {
-  animation: rotate 1.5s linear infinite;
-  font-size: 2.5em;
-}
-
-
 .loading-box {
   position: relative;
   width: 2em;
