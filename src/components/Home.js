@@ -39,7 +39,7 @@ export class Home extends Component {
 				<ScrollToTopOnMount/>
 
 				<div className="masthead">
-			    	<h1 className="hidden-heading">Ilana Boeira</h1>
+			    	<h1 className="display-none">Ilana Boeira</h1>
 					<h2 className="masthead-title">
 						Front End Developer
 					</h2>
@@ -50,11 +50,30 @@ export class Home extends Component {
 			    </div>
 
 				<nav className="footer-nav">
-					<h1 className="hidden-heading">Main Menu</h1>
+					<h1 className="display-none">Main Menu</h1>
+					
 					<ul>
-						<li><Link to="/about" title="About" className="footer-nav-item">About</Link></li>
-						<li><Link to="/portfolio" title="Portfolio" className="footer-nav-item">Portfolio</Link></li>
-						<li><Link to="/contact" title="Contact" className="footer-nav-item">Contact</Link></li>
+						<li>
+							<Link to="/about"
+								  title="About Ilana Boeira"
+								  className="footer-nav-item">
+								About
+							</Link>
+						</li>
+						<li>
+							<Link to="/portfolio"
+								  title="Portfolio of Ilana Boeira"
+								  className="footer-nav-item">
+								Portfolio
+							</Link>
+						</li>
+						<li>
+							<Link to="/contact"
+								  title="Contact Ilana Boeira"
+								  className="footer-nav-item">
+								Contact
+							</Link>
+						</li>
 					</ul>
 				</nav>
 			</div>

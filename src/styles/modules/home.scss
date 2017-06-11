@@ -1,9 +1,9 @@
 /*
 Homepage
- */
+--------------------------------- */
 
 
- @import "./globals.scss";
+ @import "../variables.scss";
 
 
 .home {
@@ -17,7 +17,6 @@ Homepage
     	&-title{
     		color: $text-color;
     		font-size: 1.375em;
-    		font-family: 'Josefin Slab', serif;
     		margin-top: 1em;
     	}
     }

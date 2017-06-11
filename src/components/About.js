@@ -249,10 +249,10 @@ export class About extends Component {
 
 						<div className="indented-text">
 							<p>
-								In <b>2015</b> I started working at <a href="http://www.fareoffice.com/" title="Fareoffice website" target="_blank">Fareoffice</a>, a Swedish tech company owned by Enterprise Holdings, the largest car rental company in the world as measured by revenue, fleet and employees. At Fareoffice we create car rental solutions for the Enterprise Rent-A-Car, National Car Rental and Alamo Rent A Car brands. There I've been working for over 2 years as Project Manager and Web Content Manager. I grew quickly in the company and became a stakeholder for different products. This experience was very gratifying and I am grateful to have had the chance to work in this motivating company with great people.
+								In <b>2015</b> I started working at <a href="http://www.fareoffice.com/" title="Fareoffice website" rel="external" target="_blank">Fareoffice</a>, a Swedish tech company owned by Enterprise Holdings, the largest car rental company in the world as measured by revenue, fleet and employees. At Fareoffice we create car rental solutions for the Enterprise, National and Alamo brands. There I've been working for over 2 years as Project Manager and Web Content Manager. I grew quickly in the company and became a stakeholder for different products. This experience was very gratifying and I am grateful to have had the chance to work in this motivating company with great people.
 							</p>
 							<p>
-								I enjoy studying and have great interest in learning new technologies. I spent several hours studying by myself to learn more about the amazing world of coding. In <b>2016</b> I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" title="Purrcipes website" target="_blank">http://www.purrcipes.com/</a> using MeteorJS and MongoDB. This year I am working on my programming skills and my project is to master React.
+								I enjoy studying and have great interest in learning new technologies. I spent several hours studying by myself to learn more about the amazing world of coding. In <b>2016</b> I learnt to program in JavaScript and created my first responsive web app <a href="http://www.purrcipes.com/" title="Purrcipes website" rel="external" target="_blank">www.purrcipes.com</a> using MeteorJS and MongoDB. This year I am working on my programming skills and my project is to master React.
 							</p>
 
 							<p>
@@ -350,10 +350,10 @@ export class About extends Component {
 
 					<div className="content">
 
-						<h1>Hello!</h1>
+						<h1>About</h1>
 
 						<strong>
-							I'm Ilana, a front-end developer, Brazilian, former biotechnology researcher, nerd, climber and a cat person.
+							Hello! I'm Ilana, a front-end developer, Brazilian, former biotech researcher, nerd, climber and a cat person.
 						</strong>
 
 						<CSSTransitionGroup
@@ -372,7 +372,7 @@ export class About extends Component {
 
 								<div className="skill-item">
 									<span className="title">HTML5 & CSS3 </span>
-									<progress value="4" max="5" className="hidden-content"></progress>
+									<progress value="4" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -383,18 +383,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">JavaScript & jQuery </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
-									</span>
-								</div>
-								<div className="skill-item">
-									<span className="title">LESS & SASS </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -405,7 +394,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">MeteorJS </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -416,7 +405,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">ReactJS </span>
-									<progress value="2" max="5" className="hidden-content"></progress>
+									<progress value="2" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -427,7 +416,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Bootstrap </span>
-									<progress value="4" max="5" className="hidden-content"></progress>
+									<progress value="4" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -437,8 +426,19 @@ export class About extends Component {
 									</span>
 								</div>
 								<div className="skill-item">
+									<span className="title">LESS & SASS </span>
+									<progress value="3" max="5" className="display-none"></progress>
+									<span className="circle">
+										<div className="circle-full"></div>
+										<div className="circle-full"></div>
+										<div className="circle-full"></div>
+										<div className="circle-empty"></div>
+										<div className="circle-empty"></div>
+									</span>
+								</div>
+								<div className="skill-item">
 									<span className="title">UI/UX </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -449,7 +449,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Responsive Design </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -460,7 +460,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Git & GitHub </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -471,7 +471,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">MongoDB </span>
-									<progress value="2" max="5" className="hidden-content"></progress>
+									<progress value="2" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -482,7 +482,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">MySQL </span>
-									<progress value="2" max="5" className="hidden-content"></progress>
+									<progress value="2" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -498,7 +498,7 @@ export class About extends Component {
 
 								<div className="skill-item">
 									<span className="title">Creative </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -509,7 +509,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Dedication </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -520,7 +520,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Determination </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -531,7 +531,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Honesty </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -543,7 +543,7 @@ export class About extends Component {
 
 								<div className="skill-item">
 									<span className="title">Passion </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="text">
 										<a title="Animated gif on this page" onClick={() => this.openPopover()}>over 9.000</a>
 									</span>
@@ -556,7 +556,7 @@ export class About extends Component {
 
 								<div className="skill-item">
 									<span className="title">Proactive </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -567,7 +567,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Problem Solving </span>
-									<progress value="4" max="5" className="hidden-content"></progress>
+									<progress value="4" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -578,7 +578,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Teamwork </span>
-									<progress value="4" max="5" className="hidden-content"></progress>
+									<progress value="4" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -589,7 +589,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Time Management </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -600,7 +600,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Verbal Communication </span>
-									<progress value="3" max="5" className="hidden-content"></progress>
+									<progress value="3" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>
@@ -611,7 +611,7 @@ export class About extends Component {
 								</div>
 								<div className="skill-item">
 									<span className="title">Willingness to Help </span>
-									<progress value="5" max="5" className="hidden-content"></progress>
+									<progress value="5" max="5" className="display-none"></progress>
 									<span className="circle">
 										<div className="circle-full"></div>
 										<div className="circle-full"></div>

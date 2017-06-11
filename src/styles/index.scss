@@ -1,33 +1,35 @@
 @font-face {
   font-family: 'Josefin Slab';
   font-style: normal;
-  src: local('Josefin Slab regular'),
-       url('/JosefinSlab-regular.ttf') format('truetype'),
-}
-
-@font-face {
-  font-family: 'Josefin Slab';
-  font-style: normal;
   font-weight: 700;
   src: local('Josefin Slab 700'),
        url('/JosefinSlab-700.ttf') format('truetype'),
 }
 
 @font-face {
-  font-family: 'Sniglet';
+  font-family: 'Josefin Sans';
   font-style: normal;
   font-weight: normal;
-  src: local('Sniglet'),
-       url('/Sniglet-regular.ttf') format('truetype'),
+  src: local('Josefin Sans regular'),
+       url('/JosefinSans-Regular.ttf') format('truetype'),
+}
+
+@font-face {
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Josefin Sans 600'),
+       url('/JosefinSans-SemiBold.ttf') format('truetype'),
 }
 
 
+@import "./variables.scss";
+@import "./normalize.scss";
 @import "./globals.scss";
-@import "./base.scss";
-@import "./menu.scss";
-@import "./home.scss";
-@import "./content.scss";
-@import "./about.scss";
-@import "./portfolio.scss";
-@import "./contact.scss";
-@import "./loader.scss";
+@import "./modules/menu.scss";
+@import "./modules/home.scss";
+@import "./modules/content.scss";
+@import "./modules/about.scss";
+@import "./modules/portfolio.scss";
+@import "./modules/contact.scss";
+@import "./modules/loader.scss";

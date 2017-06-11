@@ -1,9 +1,9 @@
 /*
 About
-*/
+--------------------------------- */
 
 
-@import "./globals.scss";
+@import "../variables.scss";
 
 
 .my-picture {
@@ -17,73 +17,72 @@ About
 	}
 }
 
-.content {
+.intro-title {
+    color: $color-green;
+    letter-spacing: 0.15em;
+}
 
-	.intro-title {
-		color: $color-green;
-		letter-spacing: 0.15em;
-	}
+.about-text {
+    text-indent: 1.5em;
+    margin-top: 2em;
 
-	.about-text {
-		text-indent: 1.5em;
-		margin-top: 2em;
+    .indented-text {
+        padding: 0 1.2em;
+        border-right: 0.2em solid $color-light-green;
+        border-left: 0.2em solid $color-light-green;
 
-		.indented-text {
-    		padding: 0 1.2em;
-		    border-right: 0.2em solid $color-light-green;
-		    border-left: 0.2em solid $color-light-green;
+        @media (min-width: 401px) {
+            border-right-width: 0.3em;
+            border-left-width: 0.3em;
+        }
+    }
+}
 
-		    @media (min-width: 401px) {
-			    border-right-width: 0.3em;
-    			border-left-width: 0.3em;
-			}
-		}
-	}
+.read-more {
+    &-enter {
+        opacity: 0.01;
 
-	.read-more {
-		&-enter {
-	    	opacity: 0.01;
+        &.read-more-enter-active {
+            opacity: 1;
+            -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
+        }
+    }
 
-	        &.read-more-enter-active {
-	        	opacity: 1;
-	            -webkit-transition: all 500ms ease-in-out;
-	            transition: all 500ms ease-in-out;
-	        }
-	    }
+    &-leave {
+        opacity: 1;
 
-	    &-leave {
-	    	opacity: 1;
+        &.read-more-leave-active {
+            opacity: 0.01;
+            -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
+        }
+    }
+}
 
-	        &.read-more-leave-active {
-	    		opacity: 0.01;
-	            -webkit-transition: all 500ms ease-in-out;
-	            transition: all 500ms ease-in-out;
-	        }
-	    }
-	}
+.button-centered {
+    text-align: center;
+    margin-top: 1.5em;
+}
 
-	.button-centered {
-		text-align: center;
-		margin-top: 1.5em;
-	}
+.button-read {
+    color: white;
+    background-color: $color-green;
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    padding: 10px 8px 8px;
+    border: 1px solid $color-green;
+    margin-bottom: 15px;
 
-	.button-read {
-		color: white;
-		background-color: $color-green;
-		font-size: 0.9em;
-	    padding: 8px;
-		border: 1px solid $color-green;
-		margin-bottom: 15px;
+    &:hover {
+        cursor: pointer;
+    }
 
-		&:hover {
-			cursor: pointer;
-		}
-
-		&-less {
-			background-color: transparent;
-			color: $color-green;
-		}
-	}
+    &-less {
+        background-color: transparent;
+        color: $color-green;
+    }
 }
 
 
@@ -99,7 +98,7 @@ About
 
     .triangle {
 		position: absolute;
-		top: -0.9em;
+		top: -0.7em;
 		right: 5%;
 		color: white;
 		font-size: 1.2em;
@@ -119,6 +118,7 @@ About
       	max-width: 80%;
     }
 }
+
 
 .skill-item {
 	margin: 0.8em 0;
@@ -499,32 +499,30 @@ About
 				&:not(:last-of-type) {
 					margin-right: 5%;
 				}
-
-				button {
-					border: none;
-					outline: none;
-					position: absolute;
-					top: 0;
-					left: 0;
-					background-color: rgba(255,255,255, 0.5);
-					width: 100%;
-					height: 100%;
-					cursor: pointer;
-					transition: background-color 300ms ease;
-
-					&.active {
-						background-color: rgba(255,255,255, 0.95);
-					}
-
-					&:focus {
-						transform: scale(1.1);
-						background-color: rgba(255,255,255, 0.95);
-					}
-				}
 			}
 		}
+
+        button {
+            border: none;
+            outline: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255,255,255, 0.5);
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            transition: background-color 300ms ease;
+
+            &.active {
+                background-color: rgba(255,255,255, 0.95);
+            }
+
+            &:focus {
+                transform: scale(1.1);
+                background-color: rgba(255,255,255, 0.95);
+            }
+        }
 	}
 }
-
-
 

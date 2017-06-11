@@ -16,60 +16,63 @@ export class Contact extends Component {
 		};
 
 		return (
-			<div>
+			<div className="wrap">
 
 				<DocumentMeta {...meta} />
 
 				<ScrollToTopOnMount/>
-			
-				<div className="wrap">
-					<Menu />
-				</div>
+            
+				<Menu />
+				
+                <div className="container">
 
-				<div className="full-height-div">
+                    <Header />
 
-					<div className="container">
+                    <div className="content">
+                        <h1>Contact</h1>
 
-						<div className="white-box"></div>
-									
-						<Header />
+                        <p>
+                            If you are interested in working with me to create awesome user interfaces or just knowing me better, then please get in touch!
+                        </p>
 
-						<div className="content">
-							<h1>Contact</h1>
+                        <p>
+                            <a href="mailto:ilana@ilanaboeira.com"
+                               title="Send an email to Ilana Boeira">
+                                ilana@ilanaboeira.com
+                            </a>
+                        </p>
 
-							<p>
-								If you are interested in working with me to create awesome user interfaces or just knowing me better, then please get in touch!
-							</p>
-
-							<p>
-								<a href="mailto:ilana@ilanaboeira.com" title="Send an email to Ilana Boeira">ilana@ilanaboeira.com</a>
-							</p>
-
-							<div className="social-nav">
-								<ul>
-									<li>
-										<a href="mailto:ilana@ilanaboeira.com" title="Send an email to Ilana Boeira">
-											<EmailIcon className="svg-icon" />
-											<span className="hidden-text"> Send an email to Ilana Boeira</span>
-										</a>
-									</li>
-									<li>
-										<a target="_blank" title="GitHub repositories of Ilana Boeira" href="https://github.com/ilanahnb?tab=repositories" type="text/html">
-											<GithubIcon className="svg-icon" />
-											<span className="hidden-text"> GitHub repositories of Ilana Boeira</span>
-										</a>
-									</li>
-									<li>
-										<a target="_blank" title="LinkedIn account of Ilana Boeira" href="https://www.linkedin.com/in/ilanaboeira/" type="text/html">
-											<LinkedinIcon className="svg-icon" />
-											<span className="hidden-text"> LinkedIn account of Ilana Boeira</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
+                        <div className="social-nav">
+                            <ul>
+                                <li>
+                                    <a href="mailto:ilana@ilanaboeira.com"
+                                       title="Send an email to Ilana Boeira">
+                                        <EmailIcon className="svg-icon" />
+                                        <span className="display-none"> Send an email to Ilana Boeira</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://github.com/ilanahnb?tab=repositories"
+                                       title="GitHub repositories of Ilana Boeira"
+                                       rel="external"
+                                       target="_blank">
+                                        <GithubIcon className="svg-icon" />
+                                        <span className="display-none"> GitHub repositories of Ilana Boeira</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/ilanaboeira/"
+                                       title="LinkedIn account of Ilana Boeira"
+                                       rel="external"
+                                       target="_blank">
+                                        <LinkedinIcon className="svg-icon" />
+                                        <span className="display-none"> LinkedIn account of Ilana Boeira</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		); 
 	}

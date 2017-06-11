@@ -31,22 +31,38 @@ export class Menu extends Component {
 			menuIsOpen = "menu open";
 			menu = <ul className="sidebar-nav">
 				<li>
-					<NavLink exact to="/" title="Home page of Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink exact to="/"
+							 title="Home page of Ilana Boeira"
+							 className="sidebar-nav-item"
+							 onClick={this.eventCloseSidebar}
+							 activeClassName="active">
 						<span></span> Home
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/about" title="About Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/about"
+							 title="About Ilana Boeira"
+							 className="sidebar-nav-item"
+							 onClick={this.eventCloseSidebar}
+							 activeClassName="active">
 						<span></span> About
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/portfolio" title="Portfolio of Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/portfolio"
+							 title="Portfolio of Ilana Boeira"
+							 className="sidebar-nav-item"
+							 onClick={this.eventCloseSidebar}
+							 activeClassName="active">
 						<span></span> Portfolio
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/contact" title="Contact Ilana Boeira" className="sidebar-nav-item" onClick={this.eventCloseSidebar} activeClassName="active">
+					<NavLink to="/contact"
+							 title="Contact Ilana Boeira"
+							 className="sidebar-nav-item"
+							 onClick={this.eventCloseSidebar}
+							 activeClassName="active">
 						<span></span> Contact
 					</NavLink>
 				</li>
@@ -68,10 +84,10 @@ export class Menu extends Component {
 	    return (
 				<nav className={menuIsOpen}>
 
-					<h1 className="hidden-heading">Main Menu</h1>
+					<h1 className="display-none">Main Menu</h1>
 
 					<div className="menu-layer" onClick={this.toggleMenu}>
-						<a href="#" className="hidden-button" onFocus={this.toggleMenu}></a>
+						<a href="#" className="hidden-interaction" onFocus={this.toggleMenu}></a>
 						<div className={active}></div>
 					    <span className="lines"></span>
 					</div>
@@ -85,7 +101,7 @@ export class Menu extends Component {
 
 					{
 	                    !this.state.menuActive ? 
-	                    <nav className="hidden-nav">
+	                    <nav className="display-none">
 							<ul>
 								<li>
 									<NavLink exact to="/" title="Home page of Ilana Boeira">

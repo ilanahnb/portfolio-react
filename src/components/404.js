@@ -5,30 +5,23 @@ import { Header } from './layout/Header';
 
 
 export const Error404 = () =>  (
-	<div>
-	
-		<div className="wrap">
-			<Menu />
-		</div>
+    <div className="wrap">
 
-		<div className="full-height-div">
+        <Menu />
 
-			<div className="container">
+        <div className="container">
 
-				<div className="white-box"></div>
-							
-				<Header />
+            <Header />
 
-				<div className="content">
-					<h1>404: page not found</h1>
+            <div className="content">
+                <h1>404: page not found</h1>
 
-					<p>We are sorry but the page you are looking for does not exist.</p>
+                <p>We are sorry but the page you are looking for does not exist.</p>
 
-					<p>
-						<Link to="/">Head back home &rarr;</Link>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+                <p>
+                    <Link to="/" title="Home page of Ilana Boeira">Go back to the home page &rarr;</Link>
+                </p>
+            </div>
+        </div>
+    </div>
 )

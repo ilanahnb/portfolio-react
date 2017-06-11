@@ -39,14 +39,20 @@ export class Portfolio extends Component {
 						<h2>Purrcipes</h2>
 
 						<p className="portfolio-links">
-							<a href="https://github.com/ilanahnb/purrcipes" title="GitHub repository of Purrcipes" target="_blank">
+							<a href="https://github.com/ilanahnb/purrcipes"
+							   title="GitHub repository of Purrcipes"
+							   rel="external"
+							   target="_blank">
 								<GithubIcon className="svg-icon" />
 								GitHub Repository
 							</a>
 						</p>
 
 						<p className="portfolio-links">
-							<a href="http://www.purrcipes.com/" title="Purrcipes website" target="_blank">
+							<a href="http://www.purrcipes.com/"
+							   title="Purrcipes website"
+							   rel="external"
+							   target="_blank">
 								<ExternalLink className="svg-icon" />
 								www.purrcipes.com
 							</a>
@@ -62,7 +68,10 @@ export class Portfolio extends Component {
 						<h2>My Portfolio</h2>
 
 						<p className="portfolio-links">
-							<a href="https://github.com/ilanahnb/portfolio-react" title="GitHub Repository of Ilana's Portfolio" target="_blank">
+							<a href="https://github.com/ilanahnb/portfolio-react"
+							   title="GitHub Repository of Ilana's Portfolio"
+							   rel="external"
+							   target="_blank">
 								<GithubIcon className="svg-icon" />
 								GitHub Repository 
 							</a>
