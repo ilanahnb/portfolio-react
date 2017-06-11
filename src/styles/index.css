@@ -415,12 +415,10 @@ body {
 
 html {
   min-height: 100%;
-  /* make sure it is at least as tall as the viewport */
   position: relative; }
 
 body {
   height: 100%;
-  /* force the body element to match the height of the HTML element */
   margin: 0;
   padding: 0; }
 
@@ -440,25 +438,14 @@ h1, h2, .content h3 {
 
 h1 {
   font-size: 3.5em;
-  /* 56px */
   margin: 28px 0 0; }
 
 h2 {
   font-size: 2em;
-  /* 32px */
   margin: 48px 0 16px; }
 
 h3 {
-  font-size: 1.375em;
-  /* 22px */ }
-
-.display-none {
-  display: none; }
-
-.hidden-interaction {
-  position: absolute;
-  text-indent: -9999px;
-  z-index: -9999; }
+  font-size: 1.375em; }
 
 p {
   line-height: 24px; }
@@ -482,6 +469,14 @@ em {
 :focus {
   outline-color: #1db7a9; }
 
+.display-none {
+  display: none; }
+
+.hidden-interaction {
+  position: absolute;
+  text-indent: -9999px;
+  z-index: -9999; }
+
 .svg-icon {
   font-size: 130%;
   vertical-align: top !important;
@@ -490,7 +485,6 @@ em {
 @media (min-width: 401px) {
   h1 {
     font-size: 4em;
-    /* 64px */
     margin-top: 16px; }
   h2 {
     margin-top: 64px; }
@@ -503,8 +497,7 @@ em {
   h1 {
     margin: 32px 0 0; }
   p, span.title {
-    font-size: 1.125em;
-    /* 18px */ }
+    font-size: 1.125em; }
   p {
     line-height: 26px; }
   small {
@@ -704,7 +697,6 @@ Homepage
     right: 0;
     background: url("/background-small.jpg") fixed center no-repeat;
     text-align: center;
-    /* Align center inline elements */
     z-index: -1; }
     .home .img-container:before {
       content: ' ';
@@ -814,14 +806,12 @@ Row
   .content strong {
     display: block;
     font-size: 1.25em;
-    /* 20px */
     line-height: 1.5em;
     padding: 0;
     margin: 20px 0; }
     @media (min-width: 401px) {
       .content strong {
         font-size: 1.375em;
-        /* 22px */
         margin: 24px; } }
 
 /* Row */
