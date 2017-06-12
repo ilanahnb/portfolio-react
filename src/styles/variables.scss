@@ -1,6 +1,9 @@
 $text-color: #303030;
+
 $color-green: #1db7a9;
 $color-light-green: #d9ead3;
-$color-dark-green: #168b80;
+$color-dark-green: darken($color-green, 10%);
+$color-highlight: saturate(adjust-hue($color-dark-green, 20deg), 50%);
+
 $font-main: 'Josefin Sans', 'Gill Sans', Calibri, Optima, Arial, sans-serif;
 $font-highlight: 'Josefin Slab', serif;

@@ -268,7 +268,7 @@ export class About extends Component {
 						</p>
 
 						<div className="button-centered">
-							<button className="button-read button-read-less" onClick={() => { this.readLessClick() }}>
+							<button className="button-less" onClick={() => { this.readLessClick() }}>
 								Show less...
 							</button>
 						</div>
@@ -292,20 +292,20 @@ export class About extends Component {
 						</p>
 
 						<div className="button-centered">
-							<button className="button-read button-read-less" onClick={() => { this.readLessClick() }}>
+							<button className="button-less" onClick={() => { this.readLessClick() }}>
 								Hide...
 							</button>
 
 							<small> or </small>
 
-							<button className="button-read" onClick={() => { this.readMoreClick() }}>
+							<button className="button-more" onClick={() => { this.readMoreClick() }}>
 								Read even more!
 							</button>
 						</div>
 					</div>
 		} else {
 			about = <div className="button-centered" key={readMore}>
-						<button className="button-read" onClick={() => { this.readMoreClick() }}>
+						<button className="button-more" onClick={() => { this.readMoreClick() }}>
 							Read more!
 						</button>
 					</div>;
@@ -369,126 +369,93 @@ export class About extends Component {
 						<div className="row">
 							<div className="col-6">
 								<h3>Professional</h3>
-
+            
 								<div className="skill-item">
 									<span className="title">HTML5 & CSS3 </span>
 									<progress value="4" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-4"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">JavaScript & jQuery </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">MeteorJS </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">ReactJS </span>
 									<progress value="2" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-2"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Bootstrap </span>
 									<progress value="4" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-4"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">LESS & SASS </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">UI/UX </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Responsive Design </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Git & GitHub </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">MongoDB </span>
 									<progress value="2" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-2"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">MySQL </span>
 									<progress value="2" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-2"></span>
 									</span>
 								</div>
 							</div>
@@ -499,45 +466,33 @@ export class About extends Component {
 								<div className="skill-item">
 									<span className="title">Creative </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Dedication </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Determination </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Honesty </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 
@@ -557,67 +512,49 @@ export class About extends Component {
 								<div className="skill-item">
 									<span className="title">Proactive </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Problem Solving </span>
 									<progress value="4" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-4"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Teamwork </span>
 									<progress value="4" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-4"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Time Management </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Verbal Communication </span>
 									<progress value="3" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-empty"></div>
-										<div className="circle-empty"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-3"></span>
 									</span>
 								</div>
 								<div className="skill-item">
 									<span className="title">Willingness to Help </span>
 									<progress value="5" max="5" className="display-none"></progress>
-									<span className="circle">
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
-										<div className="circle-full"></div>
+									<span className="skill-circle">
+                                        <span className="circle-0"></span>
+                                        <span className="circle-5"></span>
 									</span>
 								</div>
 							</div>

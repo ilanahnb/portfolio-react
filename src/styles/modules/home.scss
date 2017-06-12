@@ -6,28 +6,25 @@ Homepage
  @import "../variables.scss";
 
 
+@mixin backimg($url, $maxwidth) {
+    background: url($url) fixed center no-repeat;
+    
+    img {
+        max-width: $maxwidth;
+    }
+}
+
 .home {
 	height: 100%;
     width: 100%;
 
-    .masthead {
-    	background-color: transparent;
-    	text-align: center;
-
-    	&-title{
-    		color: $text-color;
-    		font-size: 1.375em;
-    		margin-top: 1em;
-    	}
-    }
-
 	.img-container {
+        @include backimg("/background-small.jpg", 60%);
 	    position: absolute;
 	    top: 0;
 	    bottom: 0;
 	    left: 0;
 	    right: 0;
-	    background: url("/background-small.jpg") fixed center no-repeat;
 	    text-align: center;
 	    z-index: -1;
 
@@ -42,33 +39,23 @@ Homepage
 		    vertical-align: middle;
 		    display: inline-block;
 		    width: auto;
-		    max-width: 60%;
 		    max-height: 50%
 		}
 
 		@media (min-width: 480px) {
-			background: url("/background-small.jpg") fixed center no-repeat;
-
-	    	img {
-			    max-width: 250px;
-			}
+            @include backimg("/background-small.jpg", 250px);
 		}
+        
 	    @media (min-width: 768px) {
-	    	background: url("/background-medium.jpg") fixed center no-repeat;
-
-	    	img {
-			    max-width: 300px;
-			}
+            @include backimg("/background-medium.jpg", 300px);
 		}
+        
 	    @media (min-width: 1200px) {
-	    	background: url("/background-big.jpg") fixed center no-repeat;
-	    	
-	    	img {
-			    max-width: 350px;
-			}
+            @include backimg("/background-big.jpg", 350px);
 		}
+        
 		@media (min-width: 2000px) {
-	    	background: url("/background-giant.jpg") fixed center no-repeat;
+            @include backimg("/background-giant.jpg", 350px);
 		}
 
 		@media all and (orientation: portrait) {
@@ -115,10 +102,6 @@ Homepage
 		.footer-nav ul {
 			margin-bottom: 40px;
 		}
-    	
-    	.masthead-title {
-    		margin-top: 40px;
-    	}
 	}
 }
 

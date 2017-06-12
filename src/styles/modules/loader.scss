@@ -50,6 +50,18 @@ Loading
 }
 
 
+@keyframes loader {
+  0%,
+  100% {
+    box-shadow: -1em 0 0 transparent;
+    background-color: $color-green;
+  }
+  50% {
+    box-shadow: -1em 0 0 $color-green;
+    background-color: transparent;
+  }
+}
+
 .loading-box {
   position: relative;
   width: 2em;
@@ -73,18 +85,6 @@ Loading
     top: 50%;
     bottom: 0;
     animation-delay: .25s;
-  }
-}
-
-@keyframes loader {
-  0%,
-  100% {
-    box-shadow: -1em 0 0 transparent;
-    background-color: $color-green;
-  }
-  50% {
-    box-shadow: -1em 0 0 $color-green;
-    background-color: transparent;
   }
 }
 

@@ -1,7 +1,7 @@
 /*
 Wrap
-Container
 Masthead
+Container
 Content
 Row
 --------------------------------- */
@@ -20,13 +20,11 @@ Row
 }
 
 
-/* Container */
 
-.container {
-    position: relative;
-    background-color: white;
+/* Masthead */
 
-    .masthead {
+.masthead {
+    .container & {
         width: 100%;
         text-align: center;
 
@@ -49,11 +47,57 @@ Row
             }
 
             a:hover {
-                border-bottom: solid 2px $color-green;
+                border-bottom-width: 2px;
             }
         }
+        
+        @media (min-width: 768px) {
+            position: fixed;
+            width: 80%;
+            top: 0;
+            z-index: 4;
+
+            .opaque-background {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                opacity: 0.9;
+                z-index: -1;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            width: 70%;
+            max-width: 980px;
+        }
+    }
+    
+    .home & {
+        background-color: transparent;
+    	text-align: center;
+
+    	&-title{
+    		color: $text-color;
+    		font-size: 1.375em;
+    		margin-top: 1em;
+        
+            @media (min-width: 768px) {
+                margin-top: 40px;
+            }
+    	}
     }
 }
+
+
+
+/* Container */
+
+.container {
+    position: relative;
+    background-color: white;
+}
+
 
 
 /* Content */
@@ -79,6 +123,28 @@ Row
         }
     }
 }
+
+@media (min-width: 768px) {
+    .container {
+        margin-left: 20%;
+        min-height: 100vh;
+    }
+
+    .content {
+        padding: 80px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        margin: 0 15%;
+    }
+
+    .content {
+        padding: 80px 128px 128px;
+    }
+}
+
 
 
 /* Row */
@@ -108,48 +174,3 @@ Row
     }
 }
 
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-    .container {
-        margin-left: 20%;
-        min-height: 100vh;
-
-        .masthead {
-            position: fixed;
-            width: 80%;
-            top: 0;
-            z-index: 4;
-
-            .opaque-background {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                background-color: white;
-                opacity: 0.9;
-                z-index: -1;
-            }
-        }
-    }
-
-    .content {
-        padding: 80px;
-    }
-}
-
-
-/* Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    .container {
-        margin: 0 15%;
-
-        .masthead {
-            width: 70%;
-            max-width: 980px;
-        }
-    }
-
-    .content {
-        padding: 80px 128px 128px;
-    }
-}

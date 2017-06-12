@@ -63,7 +63,8 @@ a {
 	font-weight: bold;
 
 	&:hover {
-		border-bottom: solid 1px $color-green;
+        color: $color-highlight;
+		border-bottom: solid 1px $color-highlight;
 	}
 }
 

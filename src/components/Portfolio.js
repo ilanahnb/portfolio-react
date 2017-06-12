@@ -43,9 +43,11 @@ export class Portfolio extends Component {
 							   title="GitHub repository of Purrcipes"
 							   rel="external"
 							   target="_blank">
+            
 								<GithubIcon className="svg-icon" />
-								GitHub Repository
-							</a>
+                                <span>GitHub Repository</span>
+
+                            </a>
 						</p>
 
 						<p className="portfolio-links">
@@ -53,8 +55,10 @@ export class Portfolio extends Component {
 							   title="Purrcipes website"
 							   rel="external"
 							   target="_blank">
+            
 								<ExternalLink className="svg-icon" />
-								www.purrcipes.com
+                                <span>www.purrcipes.com</span>
+								
 							</a>
 						</p>
 
@@ -72,8 +76,10 @@ export class Portfolio extends Component {
 							   title="GitHub Repository of Ilana's Portfolio"
 							   rel="external"
 							   target="_blank">
+            
 								<GithubIcon className="svg-icon" />
-								GitHub Repository 
+                                <span>GitHub Repository</span>
+								
 							</a>
 						</p>
 

@@ -6,6 +6,8 @@ About
 @import "../variables.scss";
 
 
+// Avatar
+
 .my-picture {
 	&-small img {
 		width: 100%;
@@ -17,241 +19,7 @@ About
 	}
 }
 
-.intro-title {
-    color: $color-green;
-    letter-spacing: 0.15em;
-}
-
-.about-text {
-    text-indent: 1.5em;
-    margin-top: 2em;
-
-    .indented-text {
-        padding: 0 1.2em;
-        border-right: 0.2em solid $color-light-green;
-        border-left: 0.2em solid $color-light-green;
-
-        @media (min-width: 401px) {
-            border-right-width: 0.3em;
-            border-left-width: 0.3em;
-        }
-    }
-}
-
-.read-more {
-    &-enter {
-        opacity: 0.01;
-
-        &.read-more-enter-active {
-            opacity: 1;
-            -webkit-transition: all 500ms ease-in-out;
-            transition: all 500ms ease-in-out;
-        }
-    }
-
-    &-leave {
-        opacity: 1;
-
-        &.read-more-leave-active {
-            opacity: 0.01;
-            -webkit-transition: all 500ms ease-in-out;
-            transition: all 500ms ease-in-out;
-        }
-    }
-}
-
-.button-centered {
-    text-align: center;
-    margin-top: 1.5em;
-}
-
-.button-read {
-    color: white;
-    background-color: $color-green;
-    font-size: 0.9em;
-    font-weight: bold;
-    letter-spacing: 0.04em;
-    padding: 10px 8px 8px;
-    border: 1px solid $color-green;
-    margin-bottom: 15px;
-
-    &:hover {
-        cursor: pointer;
-    }
-
-    &-less {
-        background-color: transparent;
-        color: $color-green;
-    }
-}
-
-
-.popover {
-    position: absolute;
-    display: block;
-    opacity: 1;
-    background: #fff;
-    max-height: 273px;
-    padding: 0.5em;
-    right: 2em;
-    box-shadow: 0 0 5px #888888;
-
-    .triangle {
-		position: absolute;
-		top: -0.7em;
-		right: 5%;
-		color: white;
-		font-size: 1.2em;
-		text-shadow: 0 -2px 2px #999999;
-    }
-
-    img {
-    	max-width: 100%;
-    	vertical-align: bottom;
-    }
-
-    @media (max-width: 860px) {
-    	max-width: calc(80% - 11em);
-    }
-
-    @media (max-width: 767px) {
-      	max-width: 80%;
-    }
-}
-
-
-.skill-item {
-	margin: 0.8em 0;
-
-	.circle {
-		float: right;
-
-		&-full,
-		&-empty {
-			height: 0.8em;
-			width: 0.8em;
-			display: inline-block;
-			vertical-align: middle;
-			border-radius: 50%;
-			margin-left: 0.2em;
-		}
-
-		&-full {
-			background-color: $color-green;
-		}
-
-		&-empty {
-			background-color: $color-light-green;
-		}
-
-		a {
-			cursor: pointer;
-		}
-	}
-
-	.text {
-		float: right;
-		cursor: pointer;
-	}
-}
-
-
-.hobby-wrap {
-	margin: 0 -5px;
-	text-align: center;
-
-	.hobby-item {
-		display: inline-block;
-		box-sizing: border-box;
-		width: 20%;
-		color: inherit;
-		background: none;
-		cursor: pointer;
-		font: inherit;
-		padding: 5px;
-		margin: 0.5em 0;
-		border: 0;
-
-		img {
-			display: block;
-			max-width: 50px;
-			margin: auto;
-		}
-
-		.text {
-			padding-top: 10px;
-		}
-
-		&:hover {
-			.text small {
-				border-bottom: solid 1px $text-color;
-			}
-		}
-
-		&.active {
-			.text small {
-				font-weight: bold;
-				color: $color-green;
-				border-bottom: none;
-			}
-		}
-
-		&:focus {
-			-moz-outline: none;
-			outline: none;
-
-			.text small {
-				font-weight: bold;
-				border-bottom: solid 1px $text-color;
-			}
-		}
-	}
-
-	@media (max-width: 900px) {
-		.hobby-item {
-			img {
-				max-width: 40px;
-			}
-		}
-	}
-
-	@media (max-width: 600px) {
-		.hobby-item {
-	    	padding: 0 5px;
-
-			img {
-				max-width: 35px;
-			}
-		}
-	}
-
-	@media (max-width: 400px) {
-		.hobby-item {
-			width: 25%;
-			min-height: 64px;
-			margin: 0;
-
-	    	img {
-				max-width: 30px;
-			}
-
-			.text {
-				padding-top: 5px;
-			}
-		}
-	}
-}
-
-
 @media (min-width: 768px) {
-
-	.menu {
-		position: fixed;
-		top: 0;
-		margin-top: 1em;
-		margin-left: 1em;
-	}
-
 	.menu-plus-picture {
 		width: 20%;
 		z-index: 1;
@@ -292,10 +60,6 @@ About
 			display: none;
 		}
 	}
-
-	.popover {
-		right: 5em;
-	}
 }
 
 
@@ -306,10 +70,6 @@ About
 		.my-picture-big img {
 			width: calc(115% - 1em);
 		}
-	}
-
-	.popover {
-		right: 8em;
 	}
 }
 
@@ -324,50 +84,334 @@ About
 
 
 
-/* animation for changing images in carousel */
-.carousel-animation-appear {
- 	opacity: 0.01;
+// Intro text
+.about-text {
+    text-indent: 1.5em;
+    margin-top: 2em;
+
+    .indented-text {
+        padding: 0 1.2em;
+        border-right: 0.2em solid $color-light-green;
+        border-left: 0.2em solid $color-light-green;
+
+        @media (min-width: 401px) {
+            border-right-width: 0.3em;
+            border-left-width: 0.3em;
+        }
+    }
 }
 
-.carousel-animation-appear.carousel-animation-appear-active {
-	opacity: 1;
-	transition: opacity 500ms ease-in;
+
+
+// Buttons
+.read-more {    // transition
+    &-enter {
+        opacity: 0.01;
+
+        &.read-more-enter-active {
+            opacity: 1;
+            -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
+        }
+    }
+
+    &-leave {
+        opacity: 1;
+
+        &.read-more-leave-active {
+            opacity: 0.01;
+            -webkit-transition: all 500ms ease-in-out;
+            transition: all 500ms ease-in-out;
+        }
+    }
 }
 
-.carousel-animation-enter {
- 	opacity: 0.01;
- 	z-index: 2;
-	position: absolute;
-	top: 0.5em;
-	left: 0.5em;
-	bottom: 0.5em;
-	right: 0.5em;
+.button-centered {
+    text-align: center;
+    margin-top: 1.5em;
+}
 
-	@media (max-width: 400px) {
-		left: 0;
-		bottom: 0;
-		right: 0;
+%btn {      // invisible class
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0.04em;
+    padding: 10px 8px 8px;
+    border: 1px solid $color-green;
+    margin-bottom: 15px;
+
+    &:hover {
+        cursor: pointer;
+        border-color: $color-highlight;
+    }
+}
+
+.button-more {
+    @extend %btn;
+    color: white;
+    background-color: $color-green;
+    
+    &:hover {
+        background-color: $color-highlight;
+    }
+}
+
+.button-less {
+    @extend %btn;
+    color: $color-green;
+    background-color: transparent;
+    
+    &:hover {
+        color: $color-highlight;
+    }
+}
+
+
+
+// Popover
+.popover {
+    position: absolute;
+    display: block;
+    opacity: 1;
+    background: #fff;
+    max-height: 273px;
+    padding: 0.5em;
+    right: 2em;
+    box-shadow: 0 0 5px #888888;
+
+    .triangle {
+		position: absolute;
+		top: -0.7em;
+		right: 5%;
+		color: white;
+		font-size: 1.2em;
+		text-shadow: 0 -2px 2px #999999;
+    }
+
+    img {
+    	max-width: 100%;
+    	vertical-align: bottom;
+    }
+
+    @media (max-width: 860px) {
+    	max-width: calc(80% - 11em);
+    }
+
+    @media (max-width: 767px) {
+      	max-width: 80%;
+    }
+    @media (min-width: 768px) {
+        right: 5em;
+    }
+    @media (min-width: 1200px) {
+        right: 8em;
+    }
+}
+
+
+
+// Skills
+.skill-item {
+	margin: 0.8em 0;
+
+	.text {
+		float: right;
+		cursor: pointer;
 	}
 }
 
-.carousel-animation-enter.carousel-animation-enter-active {
-	opacity: 1;
-	transition: opacity 500ms ease-in;
+.skill-circle {
+    float: right;
+
+    span {
+        position: relative;
+        display: inline-block;
+        height: 0.8em;
+        width: 0.8em;
+        border-radius: 50%;
+        margin-left: 0.2em;
+        vertical-align: baseline;
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 0.8em;
+            border-radius: 50%;
+            content: "";
+        }
+
+        &:before {
+            top: 0;
+            left: -2em;
+        }
+
+        &:after {
+            bottom: 0;
+            left: -1em;
+        }
+    }
 }
 
-.carousel-animation-leave {
- 	opacity: 1;
- 	position: relative;
-	z-index: 1;
+
+@mixin skillcircle($colorbefore, $color, $colorafter) {
+    background-color: $colorafter;
+    
+    &:before {
+        background-color: $colorbefore;
+    }
+
+    &:after {
+        background-color: $color;
+    }
 }
 
-.carousel-animation-leave.carousel-animation-leave-active {
-	opacity: 0.01;
-	transition: all 500ms ease-in;
+.circle-0 {
+    @include skillcircle($color-green, $color-green, transparent);
+    margin-right: 1em;
+}
+.circle-2 {
+    @include skillcircle($color-light-green, $color-light-green, $color-light-green);
+}
+.circle-3 {
+    @include skillcircle($color-green, $color-light-green, $color-light-green);
+}
+.circle-4 {
+    @include skillcircle($color-green, $color-green, $color-light-green);
+}
+.circle-5 {
+    @include skillcircle($color-green, $color-green, $color-green);
 }
 
 
-/* carousel */
+
+// Passions
+@mixin icongrid($qty, $iconwidth) {
+    width: (100% / ($qty));
+    
+    img {
+        max-width: $iconwidth;
+    }
+}
+
+.hobby-wrap {
+	margin: 0 -5px;
+	text-align: center;
+
+	.hobby-item {
+        @include icongrid(5, 45px);
+        display: inline-block;
+        box-sizing: border-box;
+        background: none;
+        cursor: pointer;
+        padding: 5px;
+        margin: 0.5em 0;
+        border: 0;
+
+        .text {
+            padding-top: 10px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+
+		&:hover {
+			small {
+                font-weight: bold;
+				border-bottom: solid 1px $text-color;
+			}
+		}
+
+		&.active {
+			small {
+				font-weight: bold;
+				color: $color-green;
+				border-bottom: none;
+			}
+		}
+
+		&:focus {
+			-moz-outline: none;
+			outline: none;
+
+			small {
+				font-weight: bold;
+				border-bottom: solid 1px $text-color;
+			}
+		}
+    
+        @media (max-width: 900px) {
+            @include icongrid(5, 40px);
+        }
+
+        @media (max-width: 600px) {
+            @include icongrid(5, 35px);
+            padding: 0 5px;
+        }
+
+        @media (max-width: 400px) {
+            @include icongrid(4, 30px);
+            min-height: 64px;
+            margin: 0;
+
+            .text {
+                padding-top: 5px;
+            }
+        }
+	}
+}
+
+
+
+// Animation for changing images in carousel
+.carousel-animation {
+    &-appear {
+        opacity: 0.01;
+
+        &.carousel-animation-appear-active {
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+        }
+    }
+
+    &-enter {
+        opacity: 0.01;
+        z-index: 2;
+        position: absolute;
+        top: 0.5em;
+        left: 0.5em;
+        bottom: 0.5em;
+        right: 0.5em;
+
+        @media (max-width: 400px) {
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &.carousel-animation-enter-active {
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+        }
+    }
+
+    &-leave {
+        opacity: 1;
+        position: relative;
+        z-index: 1;
+
+        &.carousel-animation-leave-active {
+            opacity: 0.01;
+            transition: all 500ms ease-in;
+        }
+    }
+}
+
+
+// Carousel
 .carousel {
 	position: relative;
 	display: inline-block;
@@ -401,10 +445,6 @@ About
 		@media (max-width: 400px) {
 			padding: .5em 0 .1em 0;
 			margin-top: 0.5em;
-
-			.carousel-slide {
-				margin-bottom: -.1em;
-			}
 		}
 	}
 

@@ -9,7 +9,8 @@ Menu
 .menu {
 	position: fixed;
 	z-index: 6;
-    top: 1em;
+    top: 0;
+    margin-top: 1em;
     margin-left: 1em;
 
     &-enter {
@@ -126,6 +127,7 @@ Menu
         }
 
         &:hover {
+            color: inherit;
             border-bottom: none;
             
             span {

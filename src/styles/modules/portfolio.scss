@@ -11,5 +11,18 @@ Portfolio
 }
 
 .portfolio-links a {
+    display: inline-block;
 	font-size: 1.1em;
+    
+    &:hover {
+        border-bottom: none;
+        
+        .svg-icon {
+            color: $color-highlight;
+        }
+        
+        span {
+            border-bottom: solid 1px $color-highlight;
+        }
+    }
 }
