@@ -13,16 +13,16 @@ export class Home extends Component {
 	}
 
 	componentDidMount(prevProps) {
-		window.scrollTo(0, 0)
+		window.scrollTo(0, 0);
 		this.setState({ loading: false }); 
 	}
 
 	render() {
-		const meta = {
-			title: 'Ilana Boeira | Front End Developer',
-			description: 'Ilana Boeira is a Brazilian front-end developer living in Sydney, Australia.'
-		};
-
+        const meta = {
+            title: 'Ilana Boeira | Front End Developer',
+            description: 'Ilana Boeira is a Brazilian front-end developer living in Newcastle, Australia.'
+        };
+        
 		const { loading } = this.state;
 
 		if(loading) {
@@ -33,8 +33,8 @@ export class Home extends Component {
 
 		return (
 			<div className="home">
-
-				<DocumentMeta {...meta} />
+                
+                <DocumentMeta {...meta} />
 
 				<ScrollToTopOnMount/>
 

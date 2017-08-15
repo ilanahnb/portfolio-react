@@ -39,7 +39,10 @@ export class Image extends Component {
 					<div className="loading-box"></div> : null
 				}
 			    <img className={this.state.imageStatus === 'loading' ? 'img-loading' : 'img-loaded'}
-					src={this.props.src} alt={this.props.alt}
+					src={this.props.src}
+                    srcSet={this.props.srcSet}
+                    sizes={this.props.sizes}
+                    alt={this.props.alt}
 					onLoad={this.handleImageLoaded.bind(this)}
 					onError={this.handleImageErrored.bind(this)}
 			    />

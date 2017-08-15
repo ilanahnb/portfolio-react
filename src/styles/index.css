@@ -422,10 +422,11 @@ body {
   margin: 0;
   padding: 0; }
 
-body, button {
+body, button, h1, h2, h3 {
   font-family: "Josefin Sans", "Gill Sans", Calibri, Optima, Arial, sans-serif; }
 
-h1, h2, h3, strong,
+strong,
+.masthead-title,
 .sidebar-nav,
 .home {
   font-family: "Josefin Slab", serif; }
@@ -528,8 +529,8 @@ Menu
     opacity: 1; }
     .menu-leave.menu-leave-active {
       opacity: 0.01;
-      -webkit-transition: opacity 100ms ease-in;
-      transition: opacity 100ms ease-in; }
+      -webkit-transition: opacity 100ms ease-out;
+      transition: opacity 100ms ease-out; }
   .menu-layer {
     background-color: transparent;
     text-align: left;
@@ -571,12 +572,10 @@ Menu
   list-style-type: none;
   padding-left: 1em;
   line-height: 1em;
-  width: 120px; }
+  width: 110px; }
   .sidebar-nav li {
     font-weight: bold;
     margin: 8px 0 0; }
-    .sidebar-nav li:first-child {
-      margin-top: 20px; }
   .sidebar-nav-item {
     display: block;
     color: #303030;
@@ -642,7 +641,7 @@ Menu
         -moz-transition: all 300ms; }
         .menu-layer .rotated-background.active, .menu-layer .rotated-background:active {
           top: -5px;
-          transform: rotate(0deg) scaleX(4.7) scaleY(6.6);
+          transform: rotate(0deg) scaleX(4.5) scaleY(6.6);
           transform-origin: left top;
           transition: all 300ms;
           -webkit-transition: all 300ms;
@@ -674,8 +673,6 @@ Menu
       z-index: 8; }
   .sidebar-nav li {
     margin: 0; }
-    .sidebar-nav li:first-child {
-      margin-top: 30px; }
   .sidebar-nav-item span {
     height: 2px; } }
 
@@ -743,7 +740,7 @@ Homepage
       .home .footer-nav ul li {
         display: inline-block;
         margin: 0 10%; }
-        @media (max-width: 480px) {
+        @media (max-width: 500px) {
           .home .footer-nav ul li {
             margin: 0 15px; } }
     .home .footer-nav a.footer-nav-item {
@@ -972,6 +969,7 @@ About
 .popover {
   position: absolute;
   display: block;
+  z-index: 1;
   opacity: 1;
   background: #fff;
   max-height: 273px;
@@ -1074,6 +1072,7 @@ About
   .hobby-wrap .hobby-item {
     width: 20%;
     display: inline-block;
+    vertical-align: top;
     box-sizing: border-box;
     background: none;
     cursor: pointer;
@@ -1175,8 +1174,7 @@ About
       vertical-align: middle; }
     @media (max-width: 400px) {
       .carousel .hobby-image {
-        padding: .5em 0 .1em 0;
-        margin-top: 0.5em; } }
+        padding: .5em 0 .1em 0; } }
   .carousel-slide {
     margin-bottom: -.1em; }
   .carousel-control {
@@ -1187,7 +1185,7 @@ About
     display: block;
     background-color: transparent;
     border: 0;
-    padding: 0 5px;
+    padding: 0;
     width: 10%;
     overflow: hidden;
     transition: background-color 300ms ease;

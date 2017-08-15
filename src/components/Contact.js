@@ -10,15 +10,15 @@ import EmailIcon from 'react-icons/lib/fa/envelope-square';
 
 export class Contact extends Component {
 	render() {
-		const meta = {
-			title: 'Contact | Ilana Boeira | Front End Developer',
-			description: 'Contact Ilana Boeira. Ilana Boeira is a Brazilian front-end developer living in Sydney, Australia.'
-		};
-
+        const meta = {
+            title: 'Contact | Ilana Boeira | Front End Developer',
+            description: 'Contact Ilana Boeira. Ilana Boeira is a Brazilian front-end developer living in Newcastle, Australia.'
+        };
+        
 		return (
 			<div className="wrap">
-
-				<DocumentMeta {...meta} />
+                
+                <DocumentMeta {...meta} />
 
 				<ScrollToTopOnMount/>
             
